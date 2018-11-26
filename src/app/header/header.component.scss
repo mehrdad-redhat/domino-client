@@ -1,0 +1,68 @@
+@import "colors.scss";
+
+header {
+  height: 72px;
+  background-color: $main-background;
+  border-bottom: 1px solid #bcbcbc;
+  .container{
+    overflow: visible;
+  }
+  main {
+    height: 100%;
+    width: 100%;
+    #right {
+      #menu {
+        padding-left: 20px;
+        border-left: 1px solid #bdbdbd;
+        margin-left: 20px;
+        i {
+          cursor: pointer;
+          color: $main-red;
+        }
+      }
+      #language {
+        font-size: 1em;
+        color: $light-gray-text;
+        cursor: pointer;
+        i {
+          margin-right: 10px;
+          font-size: 0.5em;
+        }
+      }
+    }
+    #middle {
+      position: relative;
+      ul {
+        list-style-type: none;
+        li {
+          padding-left: 25px;
+          padding-right: 25px;
+          font-size: 1.25em;
+          color: $light-gray-text;
+          display: flex;
+          justify-content: center;
+          span {
+            cursor: pointer;
+          }
+          &:first-child {
+            border-left: 1px solid #bdbdbd;
+          }
+        }
+      }
+      .moving-bar {
+        position: absolute;
+        width: 100px;
+        height: 5px;
+        border-radius: 4px;
+        background-color: $main-red;
+        bottom: -3px;
+        &#diary{
+          width: 5px;
+        }
+      }
+    }
+    #logo {
+      height: 40px;
+    }
+  }
+}

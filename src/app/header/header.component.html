@@ -1,3 +1,34 @@
-<header>
+<header class="flex-row al-center">
+  <div class="container hi-100">
+    <main class="flex-row jus-between al-center">
+      <div id="right" class="flex-row al-center">
+        <span id="menu" class="flex-row al-center">
+          <i class="dfi dfi-menu"></i>
+        </span>
+        <span id="language" class="flex-row al-center">
+          FA
+          <i class="dfi dfi-arrow-down"></i>
+        </span>
+      </div>
+      <div id="middle" class="flex-row al-center jus-center hi-100">
+        <ul class="flex-row al-center jus-center hi-100">
+          <li>
+            <span>بستنی</span>
+            <span class="moving-bar" id="ice"></span>
+          </li>
+          <li>
+            <span>لبنیات</span>
+            <span class="moving-bar" id="diary"></span>
+          </li>
+        </ul>
 
+
+      </div>
+      <div id="left" class="flex-row al-center">
+        <a [routerLink]="['/']" class="flex-row al-center">
+          <img src="../../assets/images/logo.png" alt="logo" id="logo">
+        </a>
+      </div>
+    </main>
+  </div>
 </header>

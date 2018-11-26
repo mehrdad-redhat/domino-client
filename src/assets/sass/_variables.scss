@@ -27,7 +27,7 @@ $secondaryColumnNumber: 3;
 
 //wi-xl
 @mixin laptop {
-  @media screen and (max-width: 1364px) {
+  @media screen and (max-width: 1365px) {
     @content;
   }
 }
@@ -78,57 +78,7 @@ $secondaryColumnNumber: 3;
 
 /*****************************  COLORS  - start ************************/
 
-$main-yellow:#ffea00;
-$main-yellow-hover: #dccf00;
-$main-yellow-active: #a99f00;
 
-$main-black-text:#212121;
-$secondary-black-text:#373435;
-
-$light-gray-text:#cdcece;
-$light-gray-text-hover:#747678;
-
-$dark-gray-text:#707070;
-$middle-gray-text:#818181;
-
-$sb-blue:#42a5f5;
-$sb-blue-hover: #339bdc;
-$sb-blue-active: #2d6fa9;
-
-$sb-green:#43a047;
-$sb-green-hover: #39743a;
-$sb-green-active: #246226;
-
-$bc-dark-gray:#dfe1e3;
-$bc-medium-gray:#f3f6f8;
-$bc-light-gray:#f8fafd;
-
-
-
-$placeholder-color:rgba(0,0,0,.43);
-$input-color:#555555;
-//$sb-blue:#66afe9;
-$primary-btn:yellow;
-$primary-btn-hover:#cccc00;
-$primary-btn-active:#334e6a;
-$main-text-color:rgba(0,0,0,.87);
-$secondary-text-color:white;
-$error-red:#ff524e;
-$success-green:#7ed320;
-$gray-background:rgb(245,245,245)
 
 /*****************************  COLORS  - end ************************/
-
-/*****************************  MISC  - start ************************/
-
-
-
-/*****************************  MISC  - end ************************/
-
-/*****************************  MIXINS  - start ************************/
-
-
-
-/*****************************  MIXINS  - end ************************/
-
 
