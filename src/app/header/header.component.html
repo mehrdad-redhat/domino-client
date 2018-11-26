@@ -12,11 +12,11 @@
       </div>
       <div id="middle" class="flex-row al-center jus-center hi-100">
         <ul class="flex-row al-center jus-center hi-100">
-          <li>
+          <li [class.active]="activeMenu=='ice'" (click)="browse('ice')">
             <span>بستنی</span>
             <span class="moving-bar" id="ice"></span>
           </li>
-          <li>
+          <li [class.active]="activeMenu=='diary'" (click)="browse('diary')">
             <span>لبنیات</span>
             <span class="moving-bar" id="diary"></span>
           </li>

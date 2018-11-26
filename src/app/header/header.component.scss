@@ -41,6 +41,11 @@ header {
           color: $light-gray-text;
           display: flex;
           justify-content: center;
+          &.active{
+            .moving-bar{
+              width: 100px;
+            }
+          }
           span {
             cursor: pointer;
           }
@@ -51,14 +56,12 @@ header {
       }
       .moving-bar {
         position: absolute;
-        width: 100px;
+        transition: width .4s ease;
         height: 5px;
         border-radius: 4px;
         background-color: $main-red;
         bottom: -3px;
-        &#diary{
-          width: 5px;
-        }
+        width: 5px;
       }
     }
     #logo {
