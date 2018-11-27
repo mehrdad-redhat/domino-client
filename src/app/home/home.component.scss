@@ -1,0 +1,16 @@
+section#slider{
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  overflow-y: hidden;
+  background: url("/assets/images/about-truck.jpg") no-repeat top;
+  background-size: 100% auto;
+  background-position-y: bottom;
+}
+
+section#about{
+  height: 740px;
+  //background: url("/assets/images/about-truck.jpg") no-repeat center;
+  //background-size: cover;
+
+}
