@@ -25,6 +25,13 @@ $secondaryColumnNumber: 3;
   }
 }
 
+
+@mixin laptop-m {
+  @media screen and (max-width: 1279px) {
+    @content;
+  }
+}
+
 //wi-xl
 @mixin laptop {
   @media screen and (max-width: 1365px) {

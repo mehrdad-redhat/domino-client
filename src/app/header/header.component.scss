@@ -17,7 +17,7 @@ header {
         margin-left: 20px;
         i {
           cursor: pointer;
-          color: $main-red;
+          color:$primary-red;
         }
       }
       #language {
@@ -59,7 +59,7 @@ header {
         transition: width .4s ease;
         height: 5px;
         border-radius: 4px;
-        background-color: $main-red;
+        background-color: $primary-red;
         bottom: -3px;
         z-index: 9;
         width: 5px;
