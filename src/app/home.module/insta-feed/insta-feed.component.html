@@ -1,0 +1,80 @@
+<div class="insta-feed-wrapper wi-100">
+  <ul>
+    <!--<li>
+      <div class="container">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 141.209" >
+        <defs>
+          <style>
+            .insta-card-down {
+              fill: #fff;
+            }
+          </style>
+        </defs>
+        <path id="bg" class="insta-card-down" d="M0,0S91.423,15,180.949,15,360,0,360,0V121.209a20,20,0,0,1-20,20H20a20,20,0,0,1-20-20Z"/>
+      </svg>
+      </div>
+    </li>
+    <li>
+      <div class="container">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 162.673">
+        <defs>
+          <style>
+            .insta-card-up {
+              fill: #fff;
+            }
+          </style>
+        </defs>
+        <path id="bg" class="insta-card-up" d="M0,20S90.42,0,180.28,0,360,20,360,20V142.673a20,20,0,0,1-20,20H20a20,20,0,0,1-20-20Z"/>
+      </svg>
+      </div>
+    </li>
+    <li>
+      <div class="container">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 141.209">
+        <defs>
+          <style>
+            .insta-card-down {
+              fill: #fff;
+            }
+          </style>
+        </defs>
+        <path id="bg" class="insta-card-down" d="M0,0S91.423,15,180.949,15,360,0,360,0V121.209a20,20,0,0,1-20,20H20a20,20,0,0,1-20-20Z"/>
+      </svg>
+      </div>
+    </li>-->
+
+    <li *ngFor="let p of instaInfo">
+      <a class="container" [attr.href]="'http://www.instagram.com/p/'+p.shortCode">
+        <svg class="insta-card-down-wrapper" viewBox="0 0 360 142" >
+          <path class="insta-card-down"
+                d="M360,142 H0 V0 Q180,30,360,0 V142"/>
+        </svg>
+        <svg class="insta-card-up-wrapper" viewBox="0 0 360 162">
+          <path class="insta-card-up"
+                d="M0,162 H360 V20 Q180,-20 0,20 V162"/>
+        </svg>
+        <div class="image" [style.background]="'url('+p.thumbnail+')'">
+          <img src="../../../assets/images/shadow-play.png" *ngIf="p.isItVideo">
+          <div class="insta-logo">
+            <i class="dfi dfi-instagram"></i>
+          </div>
+        </div>
+        <div class="caption flex-col">
+          <div class="top flex-row jus-between al-center wi-100">
+            <span>dominodairyco</span>
+            <div class="like">
+              <span>LIKE</span>
+              <span class="num">{{p.likeNumbers}}</span>
+              <i class="dfi dfi-like"></i>
+            </div>
+          </div>
+          <div class="down flex-row wi-100">
+            <div class="fade"></div>
+            <p>{{p.caption}}</p>
+          </div>
+        </div>
+      </a>
+    </li>
+
+  </ul>
+</div>
