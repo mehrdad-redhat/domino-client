@@ -1,0 +1,31 @@
+@import "colors.scss";
+@import "variables.scss";
+
+/* Style the list */
+ul.breadcrumb {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  li{
+    margin-right: 10px;
+    display: flex;
+    align-items: center;
+    font-size: .75em;
+    line-height: 1.75;
+    letter-spacing: -0.1px;
+    color: #b3b3b3;
+    &:last-child{
+      color: #666666;
+    }
+    i{
+      padding-right: 8px;
+      font-size: .6em;
+    }
+    a{
+      transition: color .4s ease;
+      &:hover{
+        color: #666666;
+      }
+    }
+  }
+}

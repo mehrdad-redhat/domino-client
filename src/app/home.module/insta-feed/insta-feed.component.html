@@ -1,50 +1,7 @@
 <div class="insta-feed-wrapper wi-100">
   <ul>
-    <!--<li>
-      <div class="container">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 141.209" >
-        <defs>
-          <style>
-            .insta-card-down {
-              fill: #fff;
-            }
-          </style>
-        </defs>
-        <path id="bg" class="insta-card-down" d="M0,0S91.423,15,180.949,15,360,0,360,0V121.209a20,20,0,0,1-20,20H20a20,20,0,0,1-20-20Z"/>
-      </svg>
-      </div>
-    </li>
-    <li>
-      <div class="container">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 162.673">
-        <defs>
-          <style>
-            .insta-card-up {
-              fill: #fff;
-            }
-          </style>
-        </defs>
-        <path id="bg" class="insta-card-up" d="M0,20S90.42,0,180.28,0,360,20,360,20V142.673a20,20,0,0,1-20,20H20a20,20,0,0,1-20-20Z"/>
-      </svg>
-      </div>
-    </li>
-    <li>
-      <div class="container">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 141.209">
-        <defs>
-          <style>
-            .insta-card-down {
-              fill: #fff;
-            }
-          </style>
-        </defs>
-        <path id="bg" class="insta-card-down" d="M0,0S91.423,15,180.949,15,360,0,360,0V121.209a20,20,0,0,1-20,20H20a20,20,0,0,1-20-20Z"/>
-      </svg>
-      </div>
-    </li>-->
-
     <li *ngFor="let p of instaInfo">
-      <a class="container" [attr.href]="'http://www.instagram.com/p/'+p.shortCode">
+      <a class="container" [attr.href]="'http://www.instagram.com/p/'+p.shortCode" target="_blank">
         <svg class="insta-card-down-wrapper" viewBox="0 0 360 142" >
           <path class="insta-card-down"
                 d="M360,142 H0 V0 Q180,30,360,0 V142"/>

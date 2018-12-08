@@ -10,7 +10,7 @@
 
 body {
   font-size: 100%;
-  font-family: iranyekan,roboto, sans-serif;
+  font-family: iranyekan, roboto, sans-serif;
   direction: rtl;
   background-color: #ffffff;
   -webkit-font-smoothing: antialiased;
@@ -50,27 +50,34 @@ input:-webkit-autofill {
 }
 
 input, textarea {
-  font-family: iranyekan,roboto, sans-serif;
+  font-family: iranyekan, roboto, sans-serif;
   &::-webkit-input-placeholder { /* Chrome/Opera/Safari */
     color: $placeholder-color;
-    letter-spacing: normal!important;
+    letter-spacing: normal !important;
   }
   &::-moz-placeholder { /* Firefox 19+ */
     color: $placeholder-color;
-    letter-spacing: normal!important;
+    letter-spacing: normal !important;
   }
   &:-ms-input-placeholder { /* IE 10+ */
     color: $placeholder-color;
-    letter-spacing: normal!important;
+    letter-spacing: normal !important;
   }
   &:-moz-placeholder { /* Firefox 18- */
     color: $placeholder-color;
-    letter-spacing: normal!important;
+    letter-spacing: normal !important;
+  }
+}
+
+.section-inside-wrapper {
+  width: 1103px;
+  &.big {
+    width: 1170px;
   }
 }
 
 button {
-  font-family: iranyekan,roboto, sans-serif;
+  font-family: iranyekan, roboto, sans-serif;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -89,7 +96,15 @@ button {
   transition: all .4s ease;
 }
 
-h2{
+h1 {
+  font-size: 2.5em;
+  line-height: 1.75;
+  letter-spacing: -0.2px;
+  text-align: left;
+  color: $main-text-color;
+}
+
+h2 {
   font-size: 2.25em;
   font-weight: bold;
   line-height: 1.71;
@@ -99,25 +114,30 @@ h2{
   z-index: 1;
 }
 
-h3{
+h3 {
   font-size: 1.5em;
   line-height: 1.71;
   text-align: right;
   color: $main-text-color;
 }
 
-.domino-section-element{
+.domino-section-element {
   display: flex;
   flex-direction: column;
   align-items: center;
   margin-bottom: 15px;
   z-index: 5;
-  .line{
+  &.short {
+    .line {
+      height: 57px;
+    }
+  }
+  .line {
     width: 1px;
     height: 185px;
     background-color: $main-background;
   }
-  .circle{
+  .circle {
     width: 9px;
     height: 9px;
     background-color: $main-background;
@@ -139,9 +159,20 @@ h3{
   }
 }
 
+@include laptop() {
+  .section-inside-wrapper {
+    width: 85% !important;
+  }
+}
 
-@include tablet(){
+@include tablet() {
   h2 {
     font-size: 1.8em;
   }
+
+  .section-inside-wrapper {
+    width: 90% !important;
+  }
 }
+
+

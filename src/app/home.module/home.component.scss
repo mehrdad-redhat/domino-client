@@ -313,11 +313,7 @@ section#domino-book {
   flex-direction: column;
   align-items: center;
   z-index: 0;
-  .domino-section-element.short {
-    .line {
-      height: 57px;
-    }
-  }
+
   > svg {
     position: absolute;
     top: 0;
@@ -427,7 +423,7 @@ section#domino-book {
     margin-top: 20px;
   }
   .domino-section-element.blue{
-    margin-top: 18px;
+    margin-top: 38px;
     margin-bottom: 22px;
     .line,.circle{
       background-color: $blue-gradient-end;
@@ -440,16 +436,11 @@ section#domino-book {
     color:$light-gray-text;
   }
   .insta-feed{
-    margin-top: 100px;
+    margin-top: 95px;
+    margin-bottom: 175px;
   }
 }
 
-.section-inside-wrapper {
-  width: 1103px;
-  &.big{
-    width: 1170px;
-  }
-}
 
 #blur-effect{
   height: 0;
@@ -515,11 +506,7 @@ section#domino-book {
   }
 }
 
-@include laptop() {
-  .section-inside-wrapper {
-    width: 85% !important;
-  }
-}
+
 
 @include tablet() {
   section#header {
@@ -538,10 +525,6 @@ section#domino-book {
         font-size: 1.8em !important;
       }
     }
-  }
-
-  .section-inside-wrapper {
-    width: 90% !important;
   }
 
   #domino-book > div.domino-book-wrapper.section-inside-wrapper.card > div.detail {

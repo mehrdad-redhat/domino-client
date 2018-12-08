@@ -12,4 +12,9 @@ export class FooterComponent implements OnInit {
   ngOnInit() {
   }
 
+  activeMenu:string='contact';
+  browse(menu:string){
+    this.activeMenu=menu;
+  }
+
 }

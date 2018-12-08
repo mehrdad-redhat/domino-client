@@ -9,11 +9,12 @@ export class HeaderComponent implements OnInit {
 
   constructor() { }
 
-  activeMenu:string='ice';
+
 
   ngOnInit() {
   }
 
+  activeMenu:string='ice';
   browse(menu:string){
     this.activeMenu=menu;
   }

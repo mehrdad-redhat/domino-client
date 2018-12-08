@@ -2,6 +2,7 @@ import {NgModule} from '@angular/core';
 import {CommonModule} from "@angular/common";
 import {PipesModule} from "./pipes/pipes.module";
 import {OnlyNumbersAllowedDirective} from "./directives/only-numbers-allowed.directive";
+import { BreadCrumbComponent } from './components/bread-crumb/bread-crumb.component';
 
 
 @NgModule({
@@ -11,9 +12,11 @@ import {OnlyNumbersAllowedDirective} from "./directives/only-numbers-allowed.dir
   ],
   declarations: [
     OnlyNumbersAllowedDirective,
+    BreadCrumbComponent,
   ],
   exports: [
     PipesModule,
+    BreadCrumbComponent
   ]
 })
 export class SharedModule {

@@ -1,3 +1,35 @@
-<p>
-  footer works!
-</p>
+<footer class="wi-100 flex-row al-center jus-center">
+  <div class="container footer-container hi-100 flex-col">
+    <div class="top flex-row jus-between al-center">
+      <ul class="links flex-row al-center jus-center hi-100">
+        <li [class.active]="activeMenu=='contact'" (click)="browse('contact')">
+          <span>ارتباط با ما</span>
+          <span class="moving-bar" id="contact"></span>
+        </li>
+        <li [class.active]="activeMenu=='survey'" (click)="browse('survey')">
+          <span>نظر سنجی</span>
+          <span class="moving-bar" id="survey"></span>
+        </li>
+        <li [class.active]="activeMenu=='critics'" (click)="browse('critics')">
+          <span>انتقادات و پیشنهادات</span>
+          <span class="moving-bar" id="critics"></span>
+        </li>
+      </ul>
+      <ul class="social">
+        <li>
+          <i class="dfi dfi-facebook"></i>
+        </li>
+        <li>
+          <i class="dfi dfi-twitter"></i>
+        </li>
+        <li>
+          <i class="dfi dfi-instagram"></i>
+        </li>
+      </ul>
+    </div>
+    <div class="down wi-100 flex-col">
+      <div class="copyright">ALL RIGHTS RESERVED BY DOMINO</div>
+      <div class="design">DESIGN BY: DEEEP CREATIVE MARKETING</div>
+    </div>
+  </div>
+</footer>

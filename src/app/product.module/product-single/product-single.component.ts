@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 
 @Component({
   selector: 'd-product-single',
@@ -7,9 +7,31 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProductSingleComponent implements OnInit {
 
-  constructor() { }
+  constructor() {
+  }
 
   ngOnInit() {
+    this.articles=[
+      {
+        thumbnail: '../../../assets/images/recom-blog/a1.png',
+        title: 'کیک با شیر وانیلی',
+        alias: 'cake-with-vanila-milk',
+      },
+      {
+        thumbnail: '../../../assets/images/recom-blog/a2.png',
+        title: 'کیک با شیر قهوه',
+        alias: 'cake-with-coffe-milk',
+      },
+      {
+        thumbnail: '../../../assets/images/recom-blog/a3.png',
+        title: 'کیک با شیر سفید',
+        alias: 'cake-with-regular-milk',
+      }
+    ];
   }
+
+  activeColor: number = 3;
+  activeProp: boolean = true;
+  articles: any;
 
 }

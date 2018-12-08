@@ -30,6 +30,12 @@
           svg path.insta-card-up {
             d: path("M0,162 H360 V20 Q180,20 0,20 V162");
           }
+          .image{
+            .insta-logo{
+              width: 45px;
+              height: 45px;
+            }
+          }
         }
         svg {
           position: absolute;
@@ -66,6 +72,7 @@
             align-items: center;
             background-color: black;
             opacity: .46;
+            transition: all .4s ease;
             i {
               color: white;
             }

@@ -1,3 +1,213 @@
-<p>
-  product-single works!
-</p>
+<div class="wrapper flex-col wi-100">
+  <section id="header">
+    <div class="navigator-wrapper">
+      <div class="container flex-row jus-between al-center">
+        <i class="dfi dfi-close"></i>
+        <d-bread-crumb></d-bread-crumb>
+      </div>
+    </div>
+    <div class="product-images">
+      <div class="container flex-row al-center">
+        <div class="ctrl ctrl-right">
+          <i class="dfi dfi-arrow-right"></i>
+          <span>محصول بعدی</span>
+        </div>
+        <div class="images">
+          <img class="main" src="../../../assets/images/talebi/main.png">
+          <img class="side" src="../../../assets/images/talebi/t1.png">
+          <img class="side" src="../../../assets/images/talebi/t2.png">
+          <img class="side" src="../../../assets/images/talebi/t3.png">
+          <img class="side" src="../../../assets/images/talebi/t4.png">
+        </div>
+        <div class="ctrl ctrl-left">
+          <i class="dfi dfi-arrow-left"></i>
+        </div>
+      </div>
+    </div>
+    <h1>بستنی چوبی</h1>
+    <h2>طالبی</h2>
+    <div class="colors">
+      <ul>
+        <li [class.active]="activeColor==1" (click)="activeColor=1">
+          <div></div>
+        </li>
+        <li [class.active]="activeColor==2" (click)="activeColor=2">
+          <div></div>
+        </li>
+        <li [class.active]="activeColor==3" (click)="activeColor=3">
+          <div></div>
+        </li>
+        <li [class.active]="activeColor==4" (click)="activeColor=4">
+          <div></div>
+        </li>
+        <li [class.active]="activeColor==5" (click)="activeColor=5">
+          <div></div>
+        </li>
+      </ul>
+    </div>
+  </section>
+  <section id="attributes">
+    <svg xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMinYMin slice" viewBox="0 0 1299.9 735.96">
+      <defs>
+        <style>
+          .pr-blue {
+            fill: url(#radial-gradient);
+          }
+        </style>
+        <radialGradient id="radial-gradient" cx="1050.57" cy="566.93" fx="1060.2597695106497" fy="537.5766270538753"
+                        r="622.2" gradientTransform="translate(1299.9 916.56) rotate(180)"
+                        gradientUnits="userSpaceOnUse">
+          <stop offset="0" stop-color="#1795ff"/>
+          <stop offset="0.08" stop-color="#198af2"/>
+          <stop offset="0.35" stop-color="#1d6bcd"/>
+          <stop offset="0.61" stop-color="#2054b1"/>
+          <stop offset="0.83" stop-color="#2246a1"/>
+          <stop offset="1" stop-color="#23419b"/>
+        </radialGradient>
+      </defs>
+      <path class="pr-blue"
+            d="M439.5,736h860.4V12.26c-282.6-57.9-568.5,106.9-882.3,129-86,6.1-174.1,1.5-264.7-21.4-54.1-13.6-122.1-19-152.9-19H0v635H439.5Z"/>
+    </svg>
+
+    <div class="container flex-row attr-container">
+      <div class="pr-3dmodel">
+        <img class="main" src="../../../assets/images/talebi/main.png">
+      </div>
+      <div class="pr-attr">
+        <div class="title">
+          <div class="sign"></div>
+          <h2>بستنی میوه‌ای</h2>
+          <h3>چوبی</h3>
+        </div>
+        <div class="pr-props" style="margin-bottom: 37px;">
+          <div class="title">
+            <div class="minus-plus-sign" [class.active]="activeProp" (click)="activeProp=!activeProp">
+              <div class="hr"></div>
+              <div class="vr"></div>
+            </div>
+            <h3>مشخصات محصول</h3>
+          </div>
+          <div class="pr-props-content" [class.active]="true">
+            <div class="prop-group flex-col">
+              <div class="prop-group-title">
+                <div class="dot-sign"></div>
+                <h4 style="border-left: none;margin-left: 0;padding-left: 0;">ترکیبات</h4>
+              </div>
+              <p style="margin-top: 12px;
+                        max-height: 90px;
+                        overflow: hidden;
+                        align-items: flex-start;">
+                بستنی طالبی: شير تازه، شکر، چربی نباتی، پوره طالبی، شیـر خشک
+                بدون چربي، شربت گلوکز چربی شیر(خامه تازه، کره حیوانی)، امولسیفایر،
+                استابیلایزر رنگ طبیعی کلروفیل، طعم دهنده طبیعی طالبی.
+              </p>
+            </div>
+            <div class="prop-group">
+              <div class="prop-group-title">
+                <div class="dot-sign"></div>
+                <h4>وزن خالص</h4>
+              </div>
+              <p>
+                3 ± 60گرم
+              </p>
+            </div>
+            <div class="prop-group">
+              <div class="prop-group-title">
+                <div class="dot-sign"></div>
+                <h4>حجم</h4>
+                <p>
+                  90 سی سی
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="pr-props">
+          <div class="title">
+            <div class="minus-plus-sign" [class.active]="!activeProp" (click)="activeProp=!activeProp">
+              <div class="hr"></div>
+              <div class="vr"></div>
+            </div>
+            <h3>مواد مغذی</h3>
+          </div>
+          <div class="pr-props-content" [class.active]="false">
+            <div class="prop-group">
+              <div class="prop-group-title">
+                <div class="dot-sign"></div>
+                <h4>انرژی</h4>
+              </div>
+              <p>120 کیلوکالری</p>
+            </div>
+            <div class="prop-group">
+              <div class="prop-group-title">
+                <div class="dot-sign"></div>
+                <h4>چربی</h4>
+                <p>6 گرم</p>
+              </div>
+            </div>
+            <div class="prop-group">
+              <div class="prop-group-title">
+                <div class="dot-sign"></div>
+                <h4>پروتئین</h4>
+                <p>2.47 گرم</p>
+              </div>
+            </div>
+            <div class="prop-group">
+              <div class="prop-group-title">
+                <div class="dot-sign"></div>
+                <h4>کربوهیدرات</h4>
+                <p>15.3 گرم</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section id="from-blog">
+    <div class="domino-section-element short">
+      <span class="line"></span>
+      <span class="circle"></span>
+    </div>
+    <h2>خلاقیت آشپزی</h2>
+    <div class="articles section-inside-wrapper big">
+      <ul>
+        <li *ngFor="let p of articles">
+          <a class="container" [routerLink]="['blog',p.alias]">
+            <svg class="insta-card-down-wrapper" viewBox="0 0 360 142" >
+              <path class="insta-card-down" d="M360,142 H0 V0 Q180,30,360,0 V142"/>
+            </svg>
+            <svg class="insta-card-up-wrapper" viewBox="0 0 360 162">
+              <path class="insta-card-up" d="M0,162 H360 V20 Q180,-20 0,20 V162"/>
+            </svg>
+            <div class="image" [style.background]="'url('+p.thumbnail+')'"></div>
+            <div class="caption flex-col">
+              <div class="top flex-row jus-between al-center wi-100">
+                <span>{{p.title}}</span>
+                <div class="like">
+                  <span>مشاهده مطلب</span>
+                  <i class="dfi dfi-dash-arrow-left"></i>
+                </div>
+              </div>
+            </div>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </section>
+  <section id="next-product">
+    <div class="container flex-row hi-100">
+      <div class="controllers flex-col al-center jus-between">
+        <i class="dfi dfi-arrow-up"></i>
+        <span>بستنی چوبی</span>
+        <i class="dfi dfi-arrow-down"></i>
+      </div>
+      <div class="pr-logo-wrapper flex-row jus-center al-center">
+        <div class="pr-logo flex-row jus-center al-center">
+          <img src="../../../assets/images/products/stickbar.png">
+          <img src="../../../assets/images/logo-types/logo-type-stickbar.png">
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
