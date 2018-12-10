@@ -145,6 +145,16 @@ h3 {
   }
 }
 
+.navigator-wrapper {
+  padding-top: 26px;
+  padding-bottom: 10px;
+  i.dfi-close {
+    color: $primary-red;
+    cursor: pointer;
+    font-size: .9em;
+  }
+}
+
 .grad-btn {
   border-radius: 26px;
   width: 295px;

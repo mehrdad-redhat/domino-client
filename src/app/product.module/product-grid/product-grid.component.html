@@ -1,0 +1,83 @@
+<div class="wrapper flex-col wi-100">
+  <section id="header">
+    <div class="bc-grad"></div>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1299 150.35">
+      <defs>
+        <style>
+          .pg-bg-down-curve {
+            fill: #fff;
+          }
+        </style>
+      </defs>
+      <path class="pg-bg-down-curve" d="M1056.25,1.21A1122.69,1122.69,0,0,0,940.68,14.45C915.59,18.64,888.87,24,819.73,41.19,737.9,61.56,727.63,66,650.89,85.5c-75.77,19.3-114.65,29.12-163.72,37.38A1284.1,1284.1,0,0,1,354.7,138.19a816.87,816.87,0,0,1-88,.46,785.87,785.87,0,0,1-101.29-11.33c-37.29-6.89-42.89-11.15-78.55-17.81A624.5,624.5,0,0,0,0,99.45v50.9H1299V40.16A550.16,550.16,0,0,0,1056.25,1.21Z"/>
+    </svg>
+    <div class="navigator-wrapper">
+      <div class="container flex-row jus-between al-center">
+        <i class="dfi dfi-close"></i>
+        <d-bread-crumb [white]="true"></d-bread-crumb>
+      </div>
+    </div>
+    <div class="title">
+      <h1>محصولات دومینو</h1>
+      <div class="line"></div>
+    </div>
+  </section>
+  <section id="banners">
+    <div class="menu">
+      <div #rightSide class="side right-side" [class.active]="activeSlide=='right'">
+
+        <div class="slider">
+          <ul>
+            <li>چوبی</li>
+            <li>نونی</li>
+            <li>لیوانی</li>
+            <li>کیلوئی</li>
+          </ul>
+        </div>
+
+      </div>
+      <ul class="main-menu">
+        <li class="right" (click)="slide('right')" [class.active]="activeSlide=='right'">
+          <i class="dfi dfi-arrow-right"></i>
+          <span>بستنی</span>
+        </li>
+        <li class="left" (click)="slide('left')" [class.active]="activeSlide=='left'">
+          <span>لبنیات</span>
+          <i class="dfi dfi-arrow-left"></i>
+        </li>
+      </ul>
+      <div #leftSide class="side left-side" [class.active]="activeSlide=='left'">
+        <div class="slider">
+          <ul>
+            <li>شیر</li>
+            <li>خامه</li>
+            <li>پنیر</li>
+            <li>دسر</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="banner-wrapper flex-row wi-100">
+      <div class="container">
+        <ul class="banner-container">
+          <li *ngFor="let p of products">
+            <div class="bc" [style.background-color]="p.brandColor"></div>
+            <div class="image flex-row al-center jus-center">
+              <img [src]="p.image">
+            </div>
+            <div class="logo flex-col al-center jus-center">
+              <img [src]="p.logo">
+              <ul class="flex-row wrapped">
+                <li *ngFor="let sp of p.subProducts">
+                  <span>{{sp}}</span>
+                  <div class="dot"></div>
+                </li>
+              </ul>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+</div>
