@@ -1,0 +1,48 @@
+<div class="wrapper wi-100 flex-col">
+  <p class="summary">
+    {{data?.summary}}
+  </p>
+  <div class="step">
+    <div class="divider"></div>
+    <h3>مرحله ۱ : مواد لازم و ابزارها</h3>
+    <div class="image-holder">
+      <div class="img-container">
+        <img [src]="data?.toolsAndMatterial.image">
+      </div>
+    </div>
+    <div class="tools-material">
+      <div class="material">
+        <h4>مواد لازم :</h4>
+        <ul>
+          <li *ngFor="let m of data?.toolsAndMatterial.material">
+            <div class="dot"></div>
+            <span class="name">{{m.name}}</span>
+            <div class="line"></div>
+            <span class="value">{{m.value}}</span>
+          </li>
+        </ul>
+      </div>
+      <div class="material">
+        <h4>ابزار :</h4>
+        <ul>
+          <li *ngFor="let t of data?.toolsAndMatterial.tools">
+            <div class="dot"></div>
+            <span class="name">{{t.name}}</span>
+            <div class="line"></div>
+            <span class="value">{{t.value}}</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="step" *ngFor="let s of data?.steps;let i=index">
+    <div class="divider"></div>
+    <h3>مرحله {{i+2|textHelper}} : {{s.title}}</h3>
+    <div class="image-holder">
+      <div class="img-container" *ngFor="let image of s.images">
+        <img [src]="image">
+      </div>
+    </div>
+    <p>{{s.description}}</p>
+  </div>
+</div>

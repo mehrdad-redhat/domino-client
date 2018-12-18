@@ -8,7 +8,7 @@ import {Pipe, PipeTransform} from "@angular/core";
 
 export class JalaliDatePipe implements PipeTransform {
 
-  transform(date: any,format:string): any {
+  transform(date: any,format:string='dddd ، jD jMMMM jYYYY'): any {
     if(date){
       moment.loadPersian(true);
       return moment(date).doAsJalali(true).locale('fa').format(format);

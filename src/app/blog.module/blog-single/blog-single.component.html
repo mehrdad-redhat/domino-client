@@ -1,3 +1,152 @@
-<p>
-  blog-single works!
-</p>
+<div class="wrapper flex-col wi-100">
+  <section id="header">
+    <div class="bc-grad"></div>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1299 150.35">
+      <defs>
+        <style>
+          .pg-bg-down-curve {
+            fill: #fff;
+          }
+        </style>
+      </defs>
+      <path class="pg-bg-down-curve"
+            d="M1056.25,1.21A1122.69,1122.69,0,0,0,940.68,14.45C915.59,18.64,888.87,24,819.73,41.19,737.9,61.56,727.63,66,650.89,85.5c-75.77,19.3-114.65,29.12-163.72,37.38A1284.1,1284.1,0,0,1,354.7,138.19a816.87,816.87,0,0,1-88,.46,785.87,785.87,0,0,1-101.29-11.33c-37.29-6.89-42.89-11.15-78.55-17.81A624.5,624.5,0,0,0,0,99.45v50.9H1299V40.16A550.16,550.16,0,0,0,1056.25,1.21Z"/>
+    </svg>
+    <div class="navigator-wrapper">
+      <div class="container flex-row jus-between al-center">
+        <i class="dfi dfi-close"></i>
+        <d-bread-crumb [white]="true"></d-bread-crumb>
+      </div>
+    </div>
+    <div class="title">
+      <h1>آشپزی</h1>
+      <div class="line"></div>
+    </div>
+  </section>
+  <section id="title">
+    <div class="container">
+      <div class="title-wrapper wi-100 flex-row jus-between">
+        <div class="start-line"></div>
+        <div class="main">
+          <div class="title-author">
+            <h2>{{articleData.title}}</h2>
+            <span class="author">
+          <span *ngIf="articleData.type=='cooking'">آشپزی توسط </span>
+          <span>{{articleData.author}}</span>
+        </span>
+          </div>
+          <div class="details">
+            <ul>
+              <li>
+                <span>{{articleData.likeNumber|textHelper}}</span>
+                <i class="dfi dfi-thumb-up"></i>
+              </li>
+              <li>
+                <span>{{articleData.viewNumber|textHelper}}</span>
+                <i class="dfi dfi-view"></i>
+              </li>
+              <li>
+                <span>{{articleData.takenTime|timeFormat|textHelper}}</span>
+                <i class="dfi dfi-time"></i>
+              </li>
+              <li>
+                <span>{{articleData.created_date|jalaliDate|textHelper}}</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section id="content">
+    <div class="container">
+      <d-cooking-content [articleData]="articleData" *ngIf="articleData.type=='cooking'"></d-cooking-content>
+      <d-other-content *ngIf="articleData.type!='cooking'"></d-other-content>
+    </div>
+  </section>
+  <section id="recommended">
+    <div class="domino-section-element short">
+      <span class="line"></span>
+      <span class="circle"></span>
+    </div>
+    <h2 class="gray">آشپزی‌های مرتبط</h2>
+    <div class="articles section-inside-wrapper big">
+      <ul>
+        <li *ngFor="let p of articleData?.recommended_articles">
+          <a class="container" [routerLink]="['/blog',p.alias]">
+            <svg class="insta-card-down-wrapper" viewBox="0 0 360 142">
+              <path class="insta-card-down" d="M360,142 H0 V0 Q180,30,360,0 V142"/>
+            </svg>
+            <svg class="insta-card-up-wrapper" viewBox="0 0 360 162">
+              <path class="insta-card-up" d="M0,162 H360 V20 Q180,-20 0,20 V162"/>
+            </svg>
+            <div class="image" [style.background]="'url('+p.image+')'">
+              <div class="bc flex-row al-center jus-center">
+                <div class="bc-container flex-row">
+                  <div class="like flex-col">
+                    <i class="dfi dfi-thumb-up"></i>
+                    <span>{{p.likeNumber|textHelper}}</span>
+                  </div>
+                  <div class="line"></div>
+                  <div class="view flex-col al-center jus-center">
+                    <i class="dfi dfi-view"></i>
+                    <span>{{p.viewNumber|textHelper}}</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="caption flex-col jus-center al-center">
+              <div class="top flex-row jus-between al-center wi-100">
+                <span>{{p.title}}</span>
+                <div class="like">
+                  <span>مشاهده مطلب</span>
+                  <i class="dfi dfi-dash-arrow-left"></i>
+                </div>
+              </div>
+            </div>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </section>
+  <section id="comments">
+    <div class="container">
+      <div class="comment-wrapper flex-col">
+        <div class="title flex-row al-center">
+          <div class="line"></div>
+          <h4>نظرات جدید</h4>
+        </div>
+        <ul class="flex-col">
+          <li *ngFor="let c of articleData?.comments">
+            <header>
+              <span class="author">{{c.author}}</span>
+              <span class="date">{{c.created_date|jalaliDate|textHelper}}</span>
+            </header>
+            <p>
+              {{c.text}}
+            </p>
+          </li>
+        </ul>
+      </div>
+      <form class="new-cm flex-col">
+        <div class="top flex-row">
+          <div class="material-form-item">
+            <input type="text" id="full-name" placeholder="&nbsp;">
+            <label for="full-name" data-label="نام و نام خانوادگی"></label>
+          </div>
+          <div class="material-form-item">
+            <input type="email" id="email" placeholder="&nbsp;">
+            <label for="email" data-label="ایمیل"></label>
+          </div>
+        </div>
+        <div class="bottom flex-row">
+          <div class="material-form-item">
+            <textarea id="message" placeholder="&nbsp;"></textarea>
+            <label for="message" data-label="پیام"></label>
+          </div>
+        </div>
+        <button type="submit" class="grad-btn">ارسال پیام</button>
+      </form>
+    </div>
+  </section>
+</div>
