@@ -1,5 +1,5 @@
 <div class="wrapper flex-col wi-100">
-  <section id="header">
+  <section id="header" [style.background]="'url('+articleData.image+')'">
     <div class="bc-grad"></div>
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1299 150.35">
       <defs>
@@ -19,7 +19,9 @@
       </div>
     </div>
     <div class="title">
-      <h1>آشپزی</h1>
+      <h1 *ngIf="articleData.type=='cooking'">آشپزی</h1>
+      <h1 *ngIf="articleData.type=='news'">خبر</h1>
+      <h1 *ngIf="articleData.type=='campaign'">کمپین</h1>
       <div class="line"></div>
     </div>
   </section>
@@ -45,7 +47,7 @@
                 <span>{{articleData.viewNumber|textHelper}}</span>
                 <i class="dfi dfi-view"></i>
               </li>
-              <li>
+              <li *ngIf="articleData.takenTime">
                 <span>{{articleData.takenTime|timeFormat|textHelper}}</span>
                 <i class="dfi dfi-time"></i>
               </li>
@@ -61,7 +63,7 @@
   <section id="content">
     <div class="container">
       <d-cooking-content [articleData]="articleData" *ngIf="articleData.type=='cooking'"></d-cooking-content>
-      <d-other-content *ngIf="articleData.type!='cooking'"></d-other-content>
+      <d-other-content [articleData]="articleData" *ngIf="articleData.type!='cooking'"></d-other-content>
     </div>
   </section>
   <section id="recommended">

@@ -1,3 +1,17 @@
-<p>
-  other-content works!
-</p>
+<div class="wrapper wi-100 flex-col">
+  <div class="summary flex-row">
+    <div class="image-holder">
+      <div class="img-container"><img [src]="data?.summaryImage" alt=""></div>
+    </div>
+    <p>{{data?.summary}}</p>
+  </div>
+  <div class="step" *ngFor="let s of data?.sections">
+    <p>{{s.description}}</p>
+    <div class="image-holder">
+      <div class="img-container">
+        <img [src]="s.image">
+      </div>
+    </div>
+
+  </div>
+</div>

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 
 @Component({
   selector: 'd-other-content',
@@ -11,5 +11,5 @@ export class OtherContentComponent implements OnInit {
 
   ngOnInit() {
   }
-
+  @Input('articleData') data:any;
 }

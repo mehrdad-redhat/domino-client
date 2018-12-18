@@ -7,6 +7,7 @@ section#header{
   position: relative;
   height: 575px;
   background: url("/assets/images/blog-cooking.png") no-repeat top;
+  background-repeat: no-repeat!important;
   background-size: cover;
   background-position-y: top;
   z-index: 0;
@@ -115,6 +116,9 @@ section#title{
           padding-left: 12px;
           margin-left: 12px;
           cursor: pointer;
+          &:last-child{
+            border-left: none;
+          }
           span{
             font-size: .625em;
             line-height: 1.7;
