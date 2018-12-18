@@ -8,8 +8,8 @@ section#header{
   height: 575px;
   background: url("/assets/images/blog-cooking.png") no-repeat top;
   background-repeat: no-repeat!important;
-  background-size: cover;
-  background-position-y: top;
+  background-size: cover!important;
+  background-position-y: top!important;
   z-index: 0;
   display: flex;
   flex-direction: column;
