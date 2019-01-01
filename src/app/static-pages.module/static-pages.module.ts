@@ -7,10 +7,13 @@ import { ContactUsComponent } from './contact-us/contact-us.component';
 import { SurveyComponent } from './survey/survey.component';
 import { CriticsComponent } from './critics/critics.component';
 import {FormsModule} from '@angular/forms';
-import { TestComponent } from './test/test.component';
+// import { TestComponent } from './test/test.component';
 
+// TODO: comment test component before commit
 @NgModule({
-  declarations: [AboutUsComponent, ContactUsComponent, SurveyComponent, CriticsComponent, TestComponent],
+  declarations: [AboutUsComponent, ContactUsComponent, SurveyComponent, CriticsComponent
+    // , TestComponent
+  ],
   imports: [
     CommonModule,
     RouterModule,
