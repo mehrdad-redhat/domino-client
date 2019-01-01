@@ -1,0 +1,118 @@
+@import "colors.scss";
+@import "variables";
+
+section#header {
+  background: url("/assets/images/static-pages/about-us-1.jpg") no-repeat top;
+  .line {
+    z-index: -1;
+  }
+  svg {
+    .pg-bg-down-curve {
+      fill: $primary-dark-blue;
+    }
+  }
+}
+
+section#info {
+  padding-top: 65px;
+  background-color: $primary-dark-blue;
+  padding-bottom: 170px;
+  .info-wrapper {
+    > div {
+      width: 50%;
+    }
+    .name {
+      h2 {
+        font-size: 2.375em;
+        font-weight: bold;
+        line-height: 1.72;
+        letter-spacing: -0.6px;
+        text-align: right;
+        color: $main-text-color;
+      }
+    }
+    .contact-info {
+      ul.contact {
+        width: 100%;
+        list-style-type: none;
+        display: flex;
+        flex-direction: column;
+        li {
+          color: $main-text-color;
+          margin-bottom: 10px;
+          display: flex;
+          align-items: center;
+          i{
+            margin-left: 11px;
+            font-size: 1em;
+            &.dfi-email{
+             font-size: .8em;
+            }
+          }
+          span,a{
+            font-size: 16px;
+            line-height: 1.75;
+            color: $main-background;
+          }
+          .line{
+            height: 9px;
+            width: 1px;
+            margin-left: 12px;
+            margin-right: 12px;
+            background-color: $primary-red;
+          }
+        }
+      }
+      ul.socials{
+        margin-top: 40px;
+        display: flex;
+        list-style-type: none;
+        align-items: center;
+        color:$main-text-color;
+        li{
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          margin-left: 40px;
+          a{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+          }
+          i{
+            margin-bottom: 10px;
+          }
+          span{
+            font-size: .875em;
+            line-height: 1.79;
+            text-align: left;
+            color: $main-background;
+          }
+        }
+      }
+    }
+  }
+}
+
+section#map{
+  width: 100%;
+  display: flex;
+  margin-top: -111px;
+  padding-bottom: 126px;
+  .map-wrapper{
+    height: 360px;
+    border-radius: 20px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    iframe{
+      margin-top: -58px;
+      margin-bottom: -26px;
+      width: 100%;
+      height: calc(100% + 61px);
+      border: 1px solid rgba(112, 112, 112, 0.33);
+    }
+  }
+}

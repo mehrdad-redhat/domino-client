@@ -49,7 +49,7 @@ input:-webkit-autofill {
   -webkit-box-shadow: 0 0 0 30px #ffffff inset;
 }
 
-input, textarea {
+input, textarea,select {
   font-family: iranyekan, roboto, sans-serif;
   &::-webkit-input-placeholder { /* Chrome/Opera/Safari */
     color: $placeholder-color;
@@ -400,6 +400,43 @@ h3 {
       transition: all 0.4s ease-in-out;
       background-position: 50%;
       background-size: 200% 200%;
+    }
+  }
+}
+
+.number-browser-wrapper {
+  display: flex;
+  flex-direction: row-reverse;
+  margin-top: 20px;
+  ul.number-browser {
+    list-style-type: none;
+    display: flex;
+    align-items: center;
+    filter: url('#shadowed-goo');
+    position: relative;
+    li {
+      cursor: pointer;
+      background-color: $primary-red;
+      height: 44px;
+      width: 44px;
+      margin-left: 22px;
+      border-radius: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: $main-text-color;
+      &.selected-num {
+        margin-left: 0;
+        height: 60px;
+        width: 60px;
+        position: absolute;
+        left: -5px;
+        z-index: -1;
+        transition: all .8s ease-in-out;
+      }
+      &:last-child {
+        margin-left: 0;
+      }
     }
   }
 }

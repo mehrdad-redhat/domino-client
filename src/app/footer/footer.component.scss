@@ -1,4 +1,5 @@
 @import "colors.scss";
+@import "variables.scss";
 
 footer{
   height: 200px;
@@ -115,6 +116,58 @@ footer{
       .design{
         text-align: right;
         margin-top: -2px;
+      }
+    }
+  }
+}
+
+@include mobile-xl(){
+    footer{
+      height: auto;
+      .footer-container{
+        margin-left: 0;
+        margin-right: 0;
+        width: 100% !important;
+        .top{
+          flex-direction: column-reverse;
+          ul.social{
+            margin-bottom: 50px;
+            li{
+              width: 30px;
+              height: 30px;
+              margin-left: 12px;
+              i{
+                font-size: .9em;
+                &.dfi-twitter{
+                  font-size: .8em;
+                }
+              }
+            }
+          }
+        }
+        .down{
+          margin-top: 52px;
+          >div{
+            justify-content: center!important;
+            text-align: center!important;
+          }
+          .design{
+            margin-top: 10px;
+          }
+        }
+      }
+    }
+}
+
+@include mobile-m(){
+  footer {
+    .footer-container {
+      .top {
+        ul.links{
+          li{
+            font-size: 0.675em;
+          }
+        }
       }
     }
   }

@@ -1,13 +1,24 @@
 <div class="wrapper flex-col wi-100">
   <section id="header" [class.active]="activeHeader!=''">
     <div class="bc-grad"></div>
-    <svg viewBox="0 0 1299 150.35">
+    <svg id="big" viewBox="0 0 1299 150.35">
       <path class="pg-bg-down-curve"
             d="M1056.25,1.21 A1122.69,1122.69,0,0,0,940.68,14.45 C915.59,18.64,888.87,24,819.73,41.19 C737.9,61.56,727.63,66,650.89,85.5 A1284.1,1284.1,0,0,1,354.7,138.19 a816.87,816.87,0,0,1,-88,0.46 a785.87,785.87,0,0,1,-101.29,-11.33 c-37.29,-6.89,-42.89,-11.15,-78.55,-17.81 A624.5,624.5,0,0,0,0,99.45 v50.9 H1299 V40.16 A550.16,550.16,0,0,0,1056.25,1.21"/>
     </svg>
+    <svg id="small" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 375 22">
+      <defs>
+        <style>
+          .small-bc-prime {
+            fill: #fff;
+          }
+        </style>
+      </defs>
+      <path class="small-bc-prime" d="M0,22H375C328.67,9.42,264.68.05,188,0,110.85,0,46.49,9.38,0,22Z"/>
+    </svg>
+
     <div class="navigator-wrapper">
       <div class="container flex-row jus-between al-center">
-        <i class="dfi dfi-close"></i>
+        <i class="dfi dfi-close" style="cursor: pointer;" (click)="activeHeader=''"></i>
         <d-bread-crumb [white]="true"></d-bread-crumb>
       </div>
     </div>

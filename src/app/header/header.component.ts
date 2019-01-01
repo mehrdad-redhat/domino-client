@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router} from '@angular/router';
 
 @Component({
   selector: 'd-header',
@@ -7,11 +8,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor() { }
-
+  constructor(private router:Router) { }
+  navMenuActive:boolean=false;
 
 
   ngOnInit() {
+    this.router.events.subscribe(
+      ()=>{
+        this.navMenuActive=false;
+      }
+    );
   }
 
   activeMenu:string='ice';

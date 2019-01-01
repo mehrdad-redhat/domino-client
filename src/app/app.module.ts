@@ -10,6 +10,7 @@ import { BlogModule } from './blog.module/blog.module';
 import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
 import {ErrorInterceptor, UrlInterceptor} from './_helpers/Interceptors';
 import {HomeModule} from './home.module/home.module';
+import {StaticPagesModule} from './static-pages.module/static-pages.module';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import {HomeModule} from './home.module/home.module';
     HttpClientModule,
     HomeModule,
     ProductModule,
-    BlogModule
+    BlogModule,
+    StaticPagesModule
   ],
   providers: [
     {

@@ -3,7 +3,7 @@
     <main class="flex-row jus-between al-center">
       <div id="right" class="flex-row al-center">
         <span id="menu" class="flex-row al-center">
-          <i class="dfi dfi-menu"></i>
+          <i class="dfi dfi-menu" (click)="navMenuActive=true"></i>
         </span>
         <span id="language" class="flex-row al-center">
           FA
@@ -13,6 +13,7 @@
       <div id="middle" class="flex-row al-center jus-center hi-100">
         <ul class="flex-row al-center jus-center hi-100">
           <li [class.active]="activeMenu=='ice'" (click)="browse('ice')">
+            <i class="dfi dfi-arrow-down"></i>
             <span>بستنی</span>
             <span class="moving-bar" id="ice"></span>
           </li>
@@ -32,3 +33,78 @@
     </main>
   </div>
 </header>
+
+
+
+
+<div [class.deactive]="!navMenuActive" [class.active]="navMenuActive" class="menu-container back-container">
+  <div  class="overlay-menu"></div>
+</div>
+
+
+<div [class.deactive]="!navMenuActive" [class.active]="navMenuActive" class="menu-container">
+  <div  class="overlay-menu">
+    <div class="menu-wrapper">
+      <section class="top wi-100 flex-row jus-between">
+        <i class="dfi dfi-close" (click)="navMenuActive=false"></i>
+        <a [routerLink]="['/']" class="flex-row al-center">
+          <img src="../../assets/images/logo.png" alt="logo">
+        </a>
+      </section>
+      <ul class="nav">
+        <li>
+          <a [routerLink]="['a']">
+            <span class="first"></span>
+            <span class="second"></span>
+            صفحه اصلی</a>
+        </li>
+        <li>
+          <a [routerLink]="['/about']">
+            <span class="first"></span>
+            <span class="second"></span>
+            درباره ما</a>
+        </li>
+        <li>
+
+          <a [routerLink]="['/contact']">
+            <span class="first"></span>
+            <span class="second"></span>
+            تماس با ما</a>
+        </li>
+        <li>
+          <a [routerLink]="['/blog']">
+            <span class="first"></span>
+            <span class="second"></span>
+            بلاگ
+          </a>
+        </li>
+      </ul>
+      <section class="bottom flex-col al-center">
+        <ul class="lang">
+          <li><span>AR</span></li>
+          <li><span>EN</span></li>
+          <li><span>FA</span></li>
+        </ul>
+
+        <ul class="social">
+          <li>
+            <i class="dfi dfi-youtube"></i>
+          </li>
+          <li>
+            <i class="dfi dfi-facebook"></i>
+          </li>
+          <li>
+            <i class="dfi dfi-twitter"></i>
+          </li>
+          <li>
+            <i class="dfi dfi-instagram"></i>
+          </li>
+          <li>
+            <i class="dfi dfi-aparat"></i>
+          </li>
+        </ul>
+      </section>
+    </div>
+
+  </div>
+</div>

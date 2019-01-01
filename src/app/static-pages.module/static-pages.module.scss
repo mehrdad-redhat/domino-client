@@ -1,0 +1,58 @@
+@import "colors.scss";
+@import "variables";
+
+
+section#header{
+  width: 100%;
+  position: relative;
+  height: 575px;
+  background-size: cover!important;
+  background-position-y: center!important;
+  z-index: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  .title{
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    position: relative;
+    h1{
+      font-size: 3.1em;
+      margin-bottom: 62px;
+    }
+    .line{
+      position: absolute;
+      bottom: 0;
+      background-color: white;
+      width: 1px;
+      height: 200px;
+    }
+  }
+  .navigator-wrapper{
+    width: 100%;
+    z-index: 2;
+    i.dfi-close {
+      color: white;
+    }
+  }
+  .bc-grad{
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    opacity: .62;
+    position: absolute;
+    top: 0;
+    background-image: linear-gradient(to left, $blue-gradient-start 0%, $blue-gradient-end 100%);
+  }
+  svg{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+
+  }
+
+}

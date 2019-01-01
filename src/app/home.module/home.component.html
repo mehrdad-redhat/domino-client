@@ -1,6 +1,6 @@
 <div class="wrapper flex-col wi-100">
   <section id="header">
-    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+    <svg id="big" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
          preserveAspectRatio="xMinYMin slice" viewBox="0 0 1300 1337.7">
       <defs>
         <style>
@@ -32,17 +32,40 @@
       <path id="shape_blue_About" data-name="shape blue About" class="cls-2"
             d="M0,1337.7H1300V634.56C785.15,623.43,571.5,81.24,126.61,106.2,77.69,111.88,37,123.58,0,143.76Z"/>
     </svg>
+    <svg id="small" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg"
+         xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 375 700">
+      <defs>
+        <style>
+          .small-bc {
+            fill: url(#radial-gradient2);
+          }
+        </style>
+        <radialGradient id="radial-gradient2" cx="-659.42" cy="416.81" r="1239.68" gradientUnits="userSpaceOnUse">
+          <stop offset="0" stop-color="#1795ff"/>
+          <stop offset="1" stop-color="#23419b"/>
+        </radialGradient>
+      </defs>
+      <path class="small-bc" d="M375,700c-46.33-12.58-110.32-22-187-22-77.15,0-141.51,9.38-188,22V0H375Z"/>
+    </svg>
 
     <div class="slider-wrapper">
       <div class="controllers-wrapper">
         <div class="controllers">
-        <span class="controll" id="right">
-          <i class="dfi dfi-arrow-right"></i>
-      </span>
-          <span class="controll" id="left">
-          <i class="dfi dfi-arrow-left"></i>
-      </span>
+          <span class="controll right">
+            <i class="dfi dfi-arrow-right"></i>
+          </span>
+          <span class="controll left">
+            <i class="dfi dfi-arrow-left"></i>
+          </span>
         </div>
+      </div>
+      <div class="small-controll-wrapper">
+         <span class="controll right">
+            <i class="dfi dfi-arrow-right"></i>
+          </span>
+        <span class="controll left">
+            <i class="dfi dfi-arrow-left"></i>
+          </span>
       </div>
       <div class="slide">
         <div class="description">
@@ -64,14 +87,18 @@
         </div>
       </div>
     </div>
-    <section id="about">
+    <div class="domino-section-element small">
+      <span class="line"></span>
+      <span class="circle"></span>
+    </div>
+    <section  class="about">
       <div class="container">
         <div class="section-wrapper wi-100">
           <div class="domino-section-element">
             <span class="line"></span>
             <span class="circle"></span>
           </div>
-          <h2>درباره دومینو</h2>
+          <h2 >درباره دومینو</h2>
           <p class="section-inside-wrapper">شرکت لبنیات و بستنی دومینو در سال 1390 با پشتوانه غنی از تجربه و تخصص که
             حاصل بیش از سی سال تلاش مداوم و
             کارآفرینی بنیانگذاران خود که تا قبل از تاسیس دومینو به عنوان یکی از بنیانگذاران و مالکان مجموعه لبنیات و
@@ -84,7 +111,28 @@
       </div>
     </section>
   </section>
-
+  <section id="about" class="about small-device">
+    <div class="bc"></div>
+    <div class="container">
+      <div class="section-wrapper wi-100">
+        <!--<div class="domino-section-element">-->
+          <!--<span class="line"></span>-->
+          <!--<span class="circle"></span>-->
+        <!--</div>-->
+        <h2 style="margin-top: 70px;">درباره دومینو</h2>
+        <p class="section-inside-wrapper">
+          شرکت لبنیات و بستنی دومینو در سال 1390 با پشتوانه غنی از تجربه و تخصص که
+          حاصل بیش از سی سال تلاش مداوم و
+          کارآفرینی بنیانگذاران خود که تا قبل از تاسیس دومینو به عنوان یکی از بنیانگذاران و مالکان مجموعه لبنیات و
+          بستنی
+          میهن فعالیت می کردند، تاسیس گردید. این شرکت با بهره گیری از آخرین فناوری های پیشرفته و مدرن ترین تجهیزات
+          تولیدی
+          تلاش می کند بهترین و با کیفیت ترین محصولات را تولید و به بازار عرضه نماید.
+        </p>
+        <button class="grad-btn">بیشتر بدانید</button>
+      </div>
+    </div>
+  </section>
   <section id="features">
     <div class="feature-wrapper section-inside-wrapper">
       <ul class="icons">
@@ -95,6 +143,11 @@
               <i class="dfi dfi-feature-goals"></i>
             </div>
             <span>اهداف</span>
+            <ul class="details">
+              <li>تمرکز روز ذائقه مصرف کنندگان</li>
+              <li>نوآوری و تولید محصولات جدید</li>
+              <li>ایجاد اشتغال مولد و سرمایه گذاری پایدار</li>
+            </ul>
           </div>
         </li>
         <li>
@@ -104,6 +157,11 @@
               <i class="dfi dfi-feature-perspective"></i>
             </div>
             <span>چشم‌انداز‌ها</span>
+            <ul class="details">
+              <li>تمرکز روز ذائقه مصرف کنندگان</li>
+              <li>نوآوری و تولید محصولات جدید</li>
+              <li>ایجاد اشتغال مولد و سرمایه گذاری پایدار</li>
+            </ul>
           </div>
         </li>
         <li>
@@ -113,6 +171,11 @@
               <i class="dfi dfi-feature-number"></i>
             </div>
             <span>تعداد محصولات</span>
+            <ul class="details">
+              <li>تمرکز روز ذائقه مصرف کنندگان</li>
+              <li>نوآوری و تولید محصولات جدید</li>
+              <li>ایجاد اشتغال مولد و سرمایه گذاری پایدار</li>
+            </ul>
           </div>
         </li>
         <li>
@@ -121,6 +184,11 @@
               <i class="dfi dfi-feature-distribution"></i>
             </div>
             <span>شبکه توزیع و فروش</span>
+            <ul class="details">
+              <li>تمرکز روز ذائقه مصرف کنندگان</li>
+              <li>نوآوری و تولید محصولات جدید</li>
+              <li>ایجاد اشتغال مولد و سرمایه گذاری پایدار</li>
+            </ul>
           </div>
         </li>
       </ul>
@@ -145,7 +213,7 @@
     </div>
   </section>
   <section id="domino-book">
-    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+    <svg class="big" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
          preserveAspectRatio="xMinYMin slice" viewBox="0 0 1299.9 735.96">
       <defs>
         <style>
@@ -162,37 +230,52 @@
       <path class="blue-element"
             d="M860.4,0H0V723.7c282.6,57.9,568.5-106.9,882.3-129,86-6.1,174.1-1.5,264.7,21.4,54.1,13.6,122.1,19,152.9,19h0V.1H860.4Z"/>
     </svg>
-    <div class="domino-section-element short">
-      <span class="line"></span>
-      <span class="circle"></span>
-    </div>
-    <h2>کتاب دومینو</h2>
-    <div class="domino-book-wrapper section-inside-wrapper card">
-      <div class="detail">
-        <h3 class="category">مقاله آشپزی</h3>
-        <h3 class="title">مسابقه دسر قاشقی دومینو</h3>
-        <p>
-          از افتخارات دومینو ساخت و بهره برداری از دومین
-          دستگاه تولیدی بستنی بر اساس تحقیقات و ایده پردازی تیم تحقیق و توسعه و فنی شرکت و تولید بزرگترین تولید گنندگان و  شرکت دومینو محفوظ باقی خواهد ماند.
-        </p>
-        <span>
+    <div class="wi-100 domino-book-container flex-col al-center">
+      <div class="domino-section-element short">
+        <span class="line"></span>
+        <span class="circle"></span>
+      </div>
+      <h2>کتاب دومینو</h2>
+      <div class="domino-book-wrapper section-inside-wrapper card">
+        <div class="detail">
+          <h3 class="category">مقاله آشپزی</h3>
+          <h3 class="title">مسابقه دسر قاشقی دومینو</h3>
+          <p>
+            از افتخارات دومینو ساخت و بهره برداری از دومین
+            دستگاه تولیدی بستنی بر اساس تحقیقات و ایده پردازی تیم تحقیق و توسعه و فنی شرکت و تولید بزرگترین تولید گنندگان
+            و شرکت دومینو محفوظ باقی خواهد ماند.
+          </p>
+          <span>
           مشاهده مطلب
           <i class="dfi dfi-dash-arrow-left"></i>
         </span>
+        </div>
+        <div class="image">
+          <img src="../../assets/images/blog-1.png" alt="">
+        </div>
       </div>
-      <div class="image">
-        <img src="../../assets/images/blog-1.png" alt="">
+      <div class="number-browser-wrapper section-inside-wrapper">
+        <ul class="number-browser">
+          <li #numbers (mouseover)="moveGoo($event)">۰۱</li>
+          <li #numbers (mouseover)="moveGoo($event)">۰۲</li>
+          <li #numbers (mouseover)="moveGoo($event)">۰۳</li>
+          <li #selectedNum class="selected-num"></li>
+        </ul>
       </div>
+      <button class="grad-btn">مشاهده تمام موارد</button>
+
+
     </div>
-    <div class="number-browser-wrapper section-inside-wrapper">
-      <ul class="number-browser">
-        <li #numbers (mouseover)="moveGoo($event)">۰۱</li>
-        <li #numbers (mouseover)="moveGoo($event)">۰۲</li>
-        <li #numbers (mouseover)="moveGoo($event)">۰۳</li>
-        <li #selectedNum class="selected-num"></li>
-      </ul>
-    </div>
-    <button class="grad-btn">مشاهده تمام موارد</button>
+    <svg class="small" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 375 23">
+      <defs>
+        <style>
+          .cls-1 {
+            fill: #1e44b1;
+          }
+        </style>
+      </defs>
+      <path class="cls-1" d="M0,0H375V23C328.67,10.42,264.68,1.05,188,1,110.85,1,46.49,10.38,0,23"/>
+    </svg>
     <div class="domino-section-element blue">
       <span class="line"></span>
       <span class="circle"></span>
@@ -202,22 +285,23 @@
       <d-insta-feed></d-insta-feed>
     </div>
   </section>
-  <svg xmlns="http://www.w3.org/2000/svg" version="1.1" id="blur-effect">
+  <svg xmlns="http://www.w3.org/2000/svg" version="1.1" id="blur-effect" style="width: 0;height: 0;">
     <defs>
       <filter id="shadowed-goo">
 
-        <feGaussianBlur in="SourceGraphic" result="blur" stdDeviation="10" />
-        <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -7" result="goo" />
-        <feGaussianBlur in="goo" stdDeviation="3" result="shadow" />
-        <feColorMatrix in="shadow" mode="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 1 -0.2" result="shadow" />
-        <feOffset in="shadow" dx="1" dy="1" result="shadow" />
-        <feComposite in2="shadow" in="goo" result="goo" />
-        <feComposite in2="goo" in="SourceGraphic" result="mix" />
+        <feGaussianBlur in="SourceGraphic" result="blur" stdDeviation="10"/>
+        <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -7" result="goo"/>
+        <feGaussianBlur in="goo" stdDeviation="3" result="shadow"/>
+        <feColorMatrix in="shadow" mode="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 1 -0.2"
+                       result="shadow"/>
+        <feOffset in="shadow" dx="1" dy="1" result="shadow"/>
+        <feComposite in2="shadow" in="goo" result="goo"/>
+        <feComposite in2="goo" in="SourceGraphic" result="mix"/>
       </filter>
       <filter id="goo">
-        <feGaussianBlur in="SourceGraphic" result="blur" stdDeviation="10" />
-        <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -7" result="goo" />
-        <feComposite in2="goo" in="SourceGraphic" result="mix" />
+        <feGaussianBlur in="SourceGraphic" result="blur" stdDeviation="10"/>
+        <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -7" result="goo"/>
+        <feComposite in2="goo" in="SourceGraphic" result="mix"/>
       </filter>
     </defs>
   </svg>

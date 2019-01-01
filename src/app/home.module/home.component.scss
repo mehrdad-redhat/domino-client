@@ -6,6 +6,14 @@ section#header {
   display: flex;
   flex-direction: column;
   padding-top: 100px;
+  .domino-section-element.small{
+    display: none;
+    position: absolute;
+    bottom: -40px;
+    .line{
+      height: 67px;
+    }
+  }
   svg {
     background: url("/assets/images/about-truck.jpg") no-repeat top;
     background-size: 100% auto;
@@ -15,7 +23,11 @@ section#header {
     width: 100%;
     height: 100%;
   }
-
+  svg#small{
+    display: none;
+    background: none;
+    z-index: 1;
+  }
   .slider-wrapper {
     width: 100%;
     height: 100%;
@@ -43,7 +55,7 @@ section#header {
         flex-direction: column;
         z-index: 6;
         .controll {
-          &#right {
+          &.right {
             margin-bottom: 25px;
           }
           i {
@@ -56,6 +68,35 @@ section#header {
               opacity: 1;
             }
 
+          }
+
+        }
+      }
+    }
+    .small-controll-wrapper{
+      position: absolute;
+      width: 100%;
+      justify-content: space-between;
+      padding-left: 6%;
+      padding-right: 6%;
+      right: 0;
+      display: none;
+      .controll{
+        width: 54px;
+        height: 54px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 100%;
+        background-color: #fff;
+        i {
+          font-size: 1.2em;
+          color: $primary-red;
+          opacity: .45;
+          cursor: pointer;
+          transition: opacity .2s ease;
+          &:hover {
+            opacity: 1;
           }
 
         }
@@ -112,9 +153,11 @@ section#header {
         align-items: inherit;
         justify-content: center;
         img {
+          object-fit: contain;
           z-index: 10;
           position: absolute;
           width: 100%;
+
           max-width: 630px;
         }
       }
@@ -122,7 +165,7 @@ section#header {
   }
 }
 
-section#about {
+section.about {
   z-index: 5;
   margin-bottom: 154px;
   display: flex;
@@ -153,6 +196,35 @@ section#about {
   }
 }
 
+section.about.small-device{
+  display: none;
+  background: url("/assets/images/about-truck.jpg") no-repeat top;
+  background-size: cover;
+  position: relative;
+  margin-top: -25px;
+  z-index: 0;
+  margin-bottom: 0;
+  .bc{
+    background-image: linear-gradient(-90deg, #1dc4ff 0%, #19a6ff 100%);
+    opacity: .91;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    position: absolute;
+    z-index: -1;
+  }
+  .section-wrapper{
+    p{
+      margin-bottom: 90px;
+      margin-top: 55px;
+    }
+    button{
+      margin-top: 0;
+      margin-bottom: 82px;
+    }
+  }
+}
+
 section#features {
   background-color: $very-light-blue;
   display: flex;
@@ -176,13 +248,34 @@ section#features {
     align-items: center;
     width: 100%;
     margin-top: -80px;
-    li {
+    > li {
       position: relative;
       display: flex;
       flex-direction: column;
       align-items: center;
       flex: 1;
       justify-content: center;
+      ul.details{
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        list-style-type: none;
+        margin-top: 15px;
+        transition: all .4s ease;
+        height: 0;
+        overflow: hidden;
+        > li {
+          font-size: .875em;
+          line-height: 1.79;
+          letter-spacing: -0.3px;
+          text-align: center;
+          color: $light-gray-text;
+          margin-bottom: 8px;
+          &:last-child{
+            margin-bottom: 0;
+          }
+        }
+      }
       .icon {
         cursor: pointer;
         width: 68px;
@@ -215,6 +308,7 @@ section#features {
         font-size: 1.25em;
         cursor: pointer;
         transition: color .4s ease;
+        white-space: nowrap;
       }
       .seprator {
         height: 48px;
@@ -225,7 +319,11 @@ section#features {
         background-color: $main-background;
       }
       cursor: pointer;
+      outline: 0;
+      -webkit-tap-highlight-color:  rgba(255, 255, 255, 0);
       .hover-area {
+        outline: 0;
+        -webkit-tap-highlight-color:  rgba(255, 255, 255, 0);
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -239,6 +337,10 @@ section#features {
           }
         }
         &:hover, &:active {
+
+          ul.details{
+            height: 92px;
+          }
           .icon {
             animation: features-animation-in .4s;
             animation-fill-mode: forwards;
@@ -274,7 +376,7 @@ section#features {
       list-style-type: none;
       position: relative;
       display: flex;
-      li {
+      > li {
         display: flex;
         align-items: center;
         padding-left: 26px;
@@ -315,11 +417,18 @@ section#domino-book {
   z-index: 0;
 
   > svg {
-    position: absolute;
-    top: 0;
     width: 100%;
     z-index: -1;
-    min-height: 675px;
+
+    &.big{
+      position: absolute;
+      min-height: 675px;
+      top: 0;
+    }
+    &.small{
+      display: none;
+      width: 100%;
+    }
   }
   .card {
     border-radius: 20px;
@@ -383,42 +492,7 @@ section#domino-book {
       }
     }
   }
-  .number-browser-wrapper {
-    display: flex;
-    flex-direction: row-reverse;
-    margin-top: 20px;
-    ul.number-browser {
-      list-style-type: none;
-      display: flex;
-      align-items: center;
-      filter: url('#shadowed-goo');
-      position: relative;
-      li {
-        cursor: pointer;
-        background-color: $primary-red;
-        height: 44px;
-        width: 44px;
-        margin-left: 22px;
-        border-radius: 100%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        color: $main-text-color;
-        &.selected-num {
-          margin-left: 0;
-          height: 60px;
-          width: 60px;
-          position: absolute;
-          left: -5px;
-          z-index: -1;
-          transition: all .8s ease-in-out;
-        }
-        &:last-child {
-          margin-left: 0;
-        }
-      }
-    }
-  }
+
   .grad-btn{
     margin-top: 20px;
   }
@@ -442,10 +516,7 @@ section#domino-book {
 }
 
 
-#blur-effect{
-  height: 0;
-  width: 0;
-}
+
 
 @keyframes features-animation-in {
   0% {
@@ -513,8 +584,8 @@ section#domino-book {
     align-items: flex-start;
     padding-top: 50px;
 
-    div.slider-wrapper {
-      > div.controllers-wrapper {
+    .slider-wrapper {
+      > .controllers-wrapper {
         width: 340px;
         height: 340px;
       }
@@ -531,3 +602,164 @@ section#domino-book {
     padding: 50px 50px 15px 50px;
   }
 }
+
+@include tablet-s(){
+  section#header {
+    height: calc(100vh - 70px) ;
+    align-items: center;
+    .domino-section-element.small {
+      display: flex;
+    }
+    svg#big {
+      display: none;
+    }
+    svg#small{
+      display: block;
+    }
+    .slider-wrapper{
+      padding-left: 13%;
+      padding-right: 13%;
+      padding-top: 0;
+      .controllers-wrapper{
+        display: none;
+      }
+      .small-controll-wrapper{
+        display: flex;
+      }
+      .slide{
+        flex-direction: column-reverse;
+        justify-content: space-between;
+        .images{
+          height: 277px;
+          width: 100%;
+          flex-grow: unset;
+          img{
+            height: 100%;
+          }
+        }
+        .description{
+          flex: none;
+          p.caption{
+            width: 100%;
+            text-align: center;
+          }
+          button.outer{
+            margin-top: 35px;
+            margin-bottom: 90px;
+          }
+        }
+      }
+    }
+  }
+  section.about{
+    display: none;
+  }
+  section.about.small-device{
+    display: flex;
+  }
+  section#features{
+    ul.icons{
+      > li {
+        span{
+          font-size: 1em;
+        }
+      }
+    }
+  }
+  section#domino-book{
+    .domino-book-container{
+      background-image:  linear-gradient(to bottom, rgba(28,99,205,1) 0%, rgba(30,68,177,1) 100%);
+    }
+    >svg{
+      &.big{
+        display: none;
+      }
+      &.small{
+         display: block;
+       }
+    }
+    .domino-book-wrapper{
+      flex-direction: column-reverse;
+      height: auto;
+      .detail{
+        width: 100%;
+        padding: 40px 8%;
+      }
+      .image{
+        width: 100%;
+        img{
+          width: 100%;
+        }
+      }
+    }
+    .number-browser-wrapper{
+      margin-top: 40px;
+      margin-bottom: 30px;
+      justify-content: center!important ;
+    }
+    .grad-btn{
+      margin-bottom: 60px;
+    }
+    .domino-section-element.blue {
+      margin-top: -60px;
+    }
+    .insta-feed{
+      margin-top: 60px;
+      margin-bottom: 80px;
+    }
+  }
+}
+
+@include mobile-xl(){
+  section#features{
+    ul.icons{
+      flex-direction: column;
+      margin-top: 0;
+      > li {
+        margin-bottom: 60px;
+        ul.details{
+          display: flex;
+        }
+        .seprator{
+          display: none;
+        }
+      }
+    }
+    div.features-detail{
+      display: none;
+    }
+  }
+}
+
+@include mobile-l(){
+  section#header {
+
+    .slider-wrapper {
+      .slide {
+        .description {
+          flex: none;
+          p.caption {
+            font-size: 1.4em !important;
+          }
+        }
+      }
+    }
+  }
+}
+
+@include mobile-m(){
+  section#header {
+
+    .slider-wrapper {
+      .slide {
+        .description {
+          flex: none;
+          p.caption {
+            font-size: 1.1em !important;
+          }
+        }
+      }
+    }
+  }
+}
+
