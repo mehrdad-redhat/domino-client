@@ -9,8 +9,8 @@ import {AboutUsComponent} from './static-pages.module/about-us/about-us.componen
 import {ContactUsComponent} from './static-pages.module/contact-us/contact-us.component';
 import {CriticsComponent} from './static-pages.module/critics/critics.component';
 import {SurveyComponent} from './static-pages.module/survey/survey.component';
-import {TestComponent} from './static-pages.module/test/test.component';
-
+// import {TestComponent} from './static-pages.module/test/test.component';
+// TODO: comment test component before commit
 const routes: Routes = [
   {path:'',component:HomeComponent},
   {path:'products',component:ProductGridComponent},
@@ -21,7 +21,7 @@ const routes: Routes = [
   {path:'contact',component:ContactUsComponent},
   {path:'critics',component:CriticsComponent},
   {path:'survey',component:SurveyComponent},
-  {path:'test',component:TestComponent},
+  // {path:'test',component:TestComponent},
 
   // otherwise redirect to home
   {path: '**', redirectTo: ''}
