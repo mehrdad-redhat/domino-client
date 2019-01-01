@@ -11,6 +11,7 @@ import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
 import {ErrorInterceptor, UrlInterceptor} from './_helpers/Interceptors';
 import {HomeModule} from './home.module/home.module';
 import {StaticPagesModule} from './static-pages.module/static-pages.module';
+import {CountdownTimerModule} from 'ngx-countdown-timer';
 
 @NgModule({
   declarations: [
@@ -22,6 +23,7 @@ import {StaticPagesModule} from './static-pages.module/static-pages.module';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
+    CountdownTimerModule.forRoot(),
     HomeModule,
     ProductModule,
     BlogModule,

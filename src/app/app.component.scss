@@ -1,0 +1,7 @@
+@import "variables.scss";
+
+@include mobile-xl(){
+  countdown-timer{
+    font-size: 3em!important;
+  }
+}
