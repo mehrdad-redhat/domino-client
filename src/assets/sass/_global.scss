@@ -156,12 +156,15 @@ h3 {
 }
 
 .grad-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   border-radius: 26px;
   width: 295px;
   height: 60px;
   background-image: linear-gradient(45deg, #feae62, #d53f56, #feae62, #d53f56, #feae62, #d53f56, #feae62, #d53f56);
   color: $main-text-color;
-
+  transition: all .4s ease;
   background-repeat: no-repeat;
   background-size: 400% 400%;
   &:hover {
@@ -455,6 +458,45 @@ h3 {
   .section-inside-wrapper {
     width: 90% !important;
   }
+  .articles {
+    ul {
+      justify-content: center;
+      li {
+        flex: none;
+        width: calc(50% - 30px);
+        padding-bottom: 57%;
+        border-radius: 21px;
+        .container {
+          svg {
+            bottom: -3px;
+          }
+          box-shadow: 0 5px 9px 0 #00000029;
+          svg path.insta-card-down{
+            d: path("M360,142 H0 V0 Q180,0 360,0 V142");
+
+          }
+          svg path.insta-card-up {
+            d: path("M0,162 H360 V20 Q180,20 0,20 V162");
+          }
+        }
+      }
+    }
+  }
 }
 
-
+@include tablet-s(){
+  .navigator-wrapper{
+    display: none;
+  }
+  .articles {
+    ul {
+      justify-content: center;
+      li {
+        flex: none;
+        width: calc(100% - 30px);
+        padding-bottom: 116%;
+        border-radius: 35px;
+      }
+    }
+  }
+}

@@ -106,7 +106,7 @@
             میهن فعالیت می کردند، تاسیس گردید. این شرکت با بهره گیری از آخرین فناوری های پیشرفته و مدرن ترین تجهیزات
             تولیدی
             تلاش می کند بهترین و با کیفیت ترین محصولات را تولید و به بازار عرضه نماید.</p>
-          <button class="grad-btn">بیشتر بدانید</button>
+          <a [routerLink]="['/about']" class="grad-btn">بیشتر بدانید</a>
         </div>
       </div>
     </section>
@@ -129,7 +129,7 @@
           تولیدی
           تلاش می کند بهترین و با کیفیت ترین محصولات را تولید و به بازار عرضه نماید.
         </p>
-        <button class="grad-btn">بیشتر بدانید</button>
+        <a [routerLink]="['/about']" class="grad-btn">بیشتر بدانید</a>
       </div>
     </div>
   </section>
@@ -245,10 +245,10 @@
             دستگاه تولیدی بستنی بر اساس تحقیقات و ایده پردازی تیم تحقیق و توسعه و فنی شرکت و تولید بزرگترین تولید گنندگان
             و شرکت دومینو محفوظ باقی خواهد ماند.
           </p>
-          <span>
+          <a [routerLink]="['blog','article-2334']">
           مشاهده مطلب
           <i class="dfi dfi-dash-arrow-left"></i>
-        </span>
+        </a>
         </div>
         <div class="image">
           <img src="../../assets/images/blog-1.png" alt="">
@@ -262,7 +262,7 @@
           <li #selectedNum class="selected-num"></li>
         </ul>
       </div>
-      <button class="grad-btn">مشاهده تمام موارد</button>
+      <a [routerLink]="['blog']" class="grad-btn">مشاهده تمام موارد</a>
 
 
     </div>

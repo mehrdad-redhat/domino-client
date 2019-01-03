@@ -8,10 +8,17 @@ import {Component, Input, OnInit} from '@angular/core';
 export class BreadCrumbComponent implements OnInit {
 
   @Input() white:boolean=false;
+  @Input() links:Link[]=[];
 
   constructor() { }
 
   ngOnInit() {
   }
 
+}
+
+export interface Link {
+  title:string;
+  link:string;
+  queryParams?:any;
 }

@@ -1,4 +1,5 @@
 import {Component, OnInit} from '@angular/core';
+import {Link} from '../../_shared.module/components/bread-crumb/bread-crumb.component';
 
 @Component({
   selector: 'd-product-single',
@@ -28,10 +29,32 @@ export class ProductSingleComponent implements OnInit {
         alias: 'cake-with-regular-milk',
       }
     ];
+    this.breadCrumbLinks=[
+      {
+        title:'صفحه اصلی',
+        link:'/'
+      },
+      {
+        title:'محصولات',
+        link:'/products'
+      },
+      {
+        title:'بستنی',
+        link:'/products',
+        queryParams:{
+          type:'ice-cream'
+        }
+      },
+      {
+        title:'میوه‌ای',
+        link:''
+      },
+    ]
   }
 
   activeColor: number = 3;
   activeProp: boolean = true;
   articles: any;
+  breadCrumbLinks:Link[]=[];
 
 }

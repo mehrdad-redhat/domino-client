@@ -1,4 +1,6 @@
 import {Component, OnInit, ViewChild} from '@angular/core';
+import {ActivatedRoute, Router} from '@angular/router';
+import {Link} from '../../_shared.module/components/bread-crumb/bread-crumb.component';
 
 @Component({
   selector: 'd-product-grid',
@@ -7,7 +9,7 @@ import {Component, OnInit, ViewChild} from '@angular/core';
 })
 export class ProductGridComponent implements OnInit {
 
-  constructor() { }
+  constructor(private route:ActivatedRoute,private router:Router) { }
 
   ngOnInit() {
     this.products=[
@@ -41,22 +43,54 @@ export class ProductGridComponent implements OnInit {
         ],
         brandColor:'#909090'
       }
-    ]
+    ];
+    this.breadCrumbLinks=[
+      {
+        title:'صفحه اصلی',
+        link:'/'
+      },
+      {
+        title:'محصولات',
+        link:'/products'
+      },
+      {
+        title:'بستنی',
+        link:''
+      }
+    ];
+    this.route.queryParams.subscribe(params => {
+     if(params['type']=='ice-cream'){
+       this.slide('right');
+       this.breadCrumbLinks[2].title='بستنی';
+     }else{
+       this.slide('left');
+       this.breadCrumbLinks[2].title='لبنیات';
+     }
+     this.activeSlide=params['type']=='ice-cream'?'right':'left';
+    });
+
+
   }
 
   @ViewChild('rightSide') rightSide;
   @ViewChild('leftSide') leftSide;
   activeSlide:string='';
   products:any;
+  breadCrumbLinks:Link[]=[];
 
   slide(dir:string){
     this.activeSlide=dir;
-    if(dir=='right'){
-      this.rightSide.nativeElement.style.width=this.rightSide.nativeElement.children[0].children[0].scrollWidth+'px';
-      this.leftSide.nativeElement.style.width='30px';
-    }else{
-      this.leftSide.nativeElement.style.width=this.leftSide.nativeElement.children[0].children[0].scrollWidth+'px';
-      this.rightSide.nativeElement.style.width='30px';
+
+    if(window.innerWidth>767){
+      if(dir=='right'){
+        this.rightSide.nativeElement.style.width=this.rightSide.nativeElement.children[0].children[0].scrollWidth+'px';
+        this.leftSide.nativeElement.style.width='30px';
+        this.router.navigate(['/products'], {queryParams:{type:'ice-cream'}}).then();
+      }else{
+        this.leftSide.nativeElement.style.width=this.leftSide.nativeElement.children[0].children[0].scrollWidth+'px';
+        this.rightSide.nativeElement.style.width='30px';
+        this.router.navigate(['/products'], {queryParams:{type:'dairy'}}).then();
+      }
     }
   }
 

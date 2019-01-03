@@ -2,8 +2,8 @@
   <section id="header">
     <div class="navigator-wrapper">
       <div class="container flex-row jus-between al-center">
-        <i class="dfi dfi-close"></i>
-        <d-bread-crumb></d-bread-crumb>
+        <a [routerLink]="['/products']"><i class="dfi dfi-close"></i></a>
+        <d-bread-crumb [links]="breadCrumbLinks"></d-bread-crumb>
       </div>
     </div>
     <div class="product-images">

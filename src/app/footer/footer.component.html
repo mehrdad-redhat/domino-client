@@ -3,16 +3,22 @@
     <div class="top flex-row jus-between al-center">
       <ul class="links flex-row al-center jus-center hi-100">
         <li [class.active]="activeMenu=='contact'" (click)="browse('contact')">
-          <span>ارتباط با ما</span>
+          <a [routerLink]="['contact']" routerLinkActive="active">
+            <span>ارتباط با ما</span>
           <span class="moving-bar" id="contact"></span>
+          </a>
         </li>
         <li [class.active]="activeMenu=='survey'" (click)="browse('survey')">
-          <span>نظر سنجی</span>
+          <a [routerLink]="['survey']" routerLinkActive="active">
+            <span>نظر سنجی</span>
           <span class="moving-bar" id="survey"></span>
+          </a>
         </li>
         <li [class.active]="activeMenu=='critics'" (click)="browse('critics')">
-          <span>انتقادات و پیشنهادات</span>
+          <a [routerLink]="['critics']" routerLinkActive="active">
+            <span>انتقادات و پیشنهادات</span>
           <span class="moving-bar" id="critics"></span>
+          </a>
         </li>
       </ul>
       <ul class="social">

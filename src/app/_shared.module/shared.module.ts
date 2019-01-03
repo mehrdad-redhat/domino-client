@@ -4,12 +4,14 @@ import {PipesModule} from "./pipes/pipes.module";
 import {OnlyNumbersAllowedDirective} from "./directives/only-numbers-allowed.directive";
 import { BreadCrumbComponent } from './components/bread-crumb/bread-crumb.component';
 import { ModelViewerComponent } from './components/model-viewer/model-viewer.component';
+import {RouterModule} from '@angular/router';
 
 
 @NgModule({
   imports: [
     CommonModule,
-    PipesModule
+    PipesModule,
+    RouterModule
   ],
   declarations: [
     OnlyNumbersAllowedDirective,

@@ -1,6 +1,11 @@
 <ul class="breadcrumb">
-  <li [class.white]="white"><a href="#">صفحه اصلی</a><i class="dfi dfi-arrow-left"></i></li>
-  <li [class.white]="white"><a href="#">بستنی</a><i class="dfi dfi-arrow-left"></i></li>
-  <li [class.white]="white"><a href="#">بستنی چوبی</a><i class="dfi dfi-arrow-left"></i></li>
-  <li [class.white]="white">میوه‌ای</li>
+  <!--<li [class.white]="white"><a href="#">صفحه اصلی</a><i class="dfi dfi-arrow-left"></i></li>-->
+  <!--<li [class.white]="white"><a href="#">بستنی</a><i class="dfi dfi-arrow-left"></i></li>-->
+  <!--<li [class.white]="white"><a href="#">بستنی چوبی</a><i class="dfi dfi-arrow-left"></i></li>-->
+  <!--<li [class.white]="white">میوه‌ای</li>-->
+
+  <ng-container *ngFor="let link of links">
+    <li *ngIf="link.link!=''" [class.white]="white"><a [queryParams]="link?.queryParams" [routerLink]="[link.link]">{{link.title}}</a><i class="dfi dfi-arrow-left"></i></li>
+    <li *ngIf="link.link==''" [class.white]="white">{{link.title}}</li>
+  </ng-container>
 </ul>

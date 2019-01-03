@@ -4,6 +4,7 @@ import {HomeComponent} from './home.component';
 import {HomeGateway} from './home.gateway';
 import {HomeService} from './home.service';
 import { InstaFeedComponent } from './insta-feed/insta-feed.component';
+import {RouterModule} from '@angular/router';
 
 @NgModule({
   declarations: [
@@ -11,7 +12,8 @@ import { InstaFeedComponent } from './insta-feed/insta-feed.component';
     InstaFeedComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    RouterModule
   ],
   providers:[
     HomeGateway,

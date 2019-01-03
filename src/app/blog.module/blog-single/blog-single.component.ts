@@ -1,12 +1,18 @@
-import {Component, OnInit} from '@angular/core';
+import {AfterViewInit, Component, OnInit, ViewChild} from '@angular/core';
 import {ActivatedRoute} from '@angular/router';
+import {Link} from '../../_shared.module/components/bread-crumb/bread-crumb.component';
 
 @Component({
   selector: 'd-blog-single',
   templateUrl: './blog-single.component.html',
   styleUrls: ['./blog-single.component.scss']
 })
-export class BlogSingleComponent implements OnInit {
+export class BlogSingleComponent implements OnInit{
+
+  articleData: any;
+  otherArticleData: any;
+  breadCrumbLinks:Link[]=[];
+
 
   constructor(private route: ActivatedRoute) {
   }
@@ -14,7 +20,7 @@ export class BlogSingleComponent implements OnInit {
   ngOnInit() {
     this.articleData = {
       id: 12,
-      type: 'cooking',
+      category: 'cooking',
       title: 'آشپزی دسر با بستنی زعفرونی',
       image: '/assets/images/blog-cooking.png',
       alias: 'ashpazi-deser-ba-bastani-zaferooni',
@@ -138,7 +144,7 @@ export class BlogSingleComponent implements OnInit {
     };
     this.otherArticleData = {
       id: 11,
-      type: 'news',
+      category: 'news',
       title: '۲۵ راز آشپزی برای خوش طعم کردن غذا',
       image: '/assets/images/blog-news.png',
       alias: 'ashpazi-deser-ba-bastani-zaferooni',
@@ -221,11 +227,31 @@ export class BlogSingleComponent implements OnInit {
     this.route.paramMap.subscribe(params => {
       if (params.get('bId') != 'cooking') {
         this.articleData = this.otherArticleData;
+        this.breadCrumbLinks=[
+          {
+            title:'صفحه اصلی',
+            link:'/'
+          },
+          {
+            title:'بلاگ',
+            link:'/blog'
+          },
+          {
+            title:this.articleData.category=='cooking'?'آشپزی':(this.articleData.category=='news'?'اخبار':'کمپین‌ها'),
+            link:'/blog',
+            queryParams:{
+              category:this.articleData.category
+            }
+          },
+          {
+            title:this.articleData.title,
+            link:''
+          }
+        ];
       }
     });
   }
 
-  articleData: any;
-  otherArticleData: any;
+
 
 }

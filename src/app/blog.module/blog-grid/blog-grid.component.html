@@ -19,24 +19,33 @@
     <div class="navigator-wrapper">
       <div class="container flex-row jus-between al-center">
         <i class="dfi dfi-close" style="cursor: pointer;" (click)="activeHeader=''"></i>
-        <d-bread-crumb [white]="true"></d-bread-crumb>
+        <d-bread-crumb [links]="breadCrumbLinks" [white]="true"></d-bread-crumb>
       </div>
     </div>
-    <div class="container titles flex-row jus-center">
-      <div class="title" [class.unActive]="(activeHeader=='cooking') || (activeHeader=='campaigns')" [class.active]="activeHeader=='news'">
-        <h1 (click)="activeHeader='news'">اخبار</h1>
+    <div class="small-controll-wrapper">
+         <span class="controll right" (click)="changeCategory('right')">
+            <i class="dfi dfi-arrow-right"></i>
+          </span>
+      <span class="controll left" (click)="changeCategory('left')">
+            <i class="dfi dfi-arrow-left"></i>
+          </span>
+    </div>
+    <div #parent class="container titles flex-row jus-center">
+
+      <div #right class="title" [class.unActive]="(activeHeader=='cooking') || (activeHeader=='campaigns')" [class.active]="activeHeader=='news'">
+        <a [routerLink]="['/blog']" [queryParams]="{category: 'news'}"><h1 (click)="activeHeader='news'">اخبار</h1></a>
         <div class="line" >
           <div class="circle"></div>
         </div>
       </div>
-      <div class="title" [class.unActive]="activeHeader=='campaigns' || (activeHeader=='news')" [class.active]="activeHeader=='cooking'" style="margin-left: 20%;margin-right: 20%;">
-        <h1 (click)="activeHeader='cooking'">آشپزی</h1>
+      <div #center class="title" [class.unActive]="activeHeader=='campaigns' || (activeHeader=='news')" [class.active]="activeHeader=='cooking'" style="margin-left: 20%;margin-right: 20%;">
+        <a [routerLink]="['/blog']" [queryParams]="{category: 'cooking'}"><h1 (click)="activeHeader='cooking'">آشپزی</h1></a>
         <div class="line" >
           <div class="circle"></div>
         </div>
       </div>
-      <div class="title" [class.unActive]="activeHeader=='cooking' || (activeHeader=='news')" [class.active]="activeHeader=='campaigns'">
-        <h1 (click)="activeHeader='campaigns'">کمپین‌ها</h1>
+      <div #left class="title" [class.unActive]="activeHeader=='cooking' || (activeHeader=='news')" [class.active]="activeHeader=='campaigns'">
+        <a [routerLink]="['/blog']" [queryParams]="{category: 'campaigns'}"><h1 (click)="activeHeader='campaigns'">کمپین‌ها</h1></a>
         <div class="line" >
           <div class="circle"></div>
         </div>

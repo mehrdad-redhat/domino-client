@@ -41,9 +41,3 @@ ul.breadcrumb {
   }
 }
 
-
-@include tablet-s(){
-  ul.breadcrumb{
-    display: none;
-  }
-}

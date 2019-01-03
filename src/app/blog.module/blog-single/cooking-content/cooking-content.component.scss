@@ -108,3 +108,27 @@ h3{
     }
   }
 }
+
+@include tablet-s(){
+  p{
+    padding-left: 2%!important;
+    padding-right: 2%!important;
+    text-align: justify!important;
+    text-align-last: right!important;
+    -moz-text-align-last: right!important;
+  }
+
+  .image-holder{
+    flex-direction: column;
+    >.img-container{
+      margin-bottom: 12px;
+    }
+  }
+
+  .tools-material{
+    flex-direction: column;
+    >div{
+      width: 100%;
+    }
+  }
+}
