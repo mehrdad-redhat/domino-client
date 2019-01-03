@@ -1,5 +1,5 @@
 import {AfterViewInit, Component, OnInit, ViewChild} from '@angular/core';
-import { Router} from '@angular/router';
+import {ActivatedRoute, Router} from '@angular/router';
 
 @Component({
   selector: 'd-header',
@@ -8,12 +8,16 @@ import { Router} from '@angular/router';
 })
 export class HeaderComponent implements OnInit,AfterViewInit {
 
-  constructor(private router:Router) { }
+  constructor(private router:Router,private route:ActivatedRoute) { }
   navMenuActive:boolean=false;
   @ViewChild('header') header;
 
   ngOnInit() {
-
+    setTimeout(()=>{
+      this.route.queryParams.subscribe(params => {
+        this.activeMenu=params['type'];
+      });
+    },200)
   }
 
   ngAfterViewInit(){
@@ -25,8 +29,9 @@ export class HeaderComponent implements OnInit,AfterViewInit {
     );
   }
 
-  activeMenu:string='ice';
+  activeMenu:string='ice-cream';
   browse(menu:string){
+    this.router.navigate(['/products'], {queryParams:{type:menu}}).then();
     this.activeMenu=menu;
   }
 
