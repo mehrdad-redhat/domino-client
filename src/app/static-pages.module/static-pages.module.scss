@@ -52,7 +52,22 @@ section#header{
     position: absolute;
     bottom: 0;
     width: 100%;
-
+    &#small{
+      display: none;
+    }
   }
 
+}
+
+@include tablet-s(){
+  section#header{
+    svg{
+      &#small{
+        display: block;
+      }
+      &#big{
+        display: none;
+      }
+    }
+  }
 }

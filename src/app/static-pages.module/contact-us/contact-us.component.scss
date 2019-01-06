@@ -116,3 +116,26 @@ section#map{
     }
   }
 }
+
+@include tablet-s(){
+  section#info{
+    padding-top: 15px;
+    .info-wrapper{
+      flex-direction: column;
+      >div{
+        width: 100%;
+      }
+      .name{
+        margin-bottom: 70px;
+      }
+      .contact-info{
+        ul.socials{
+          justify-content: center;
+        }
+      }
+    }
+  }
+  section#map{
+    padding-bottom: 34px;
+  }
+}

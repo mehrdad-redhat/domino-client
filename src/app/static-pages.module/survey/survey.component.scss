@@ -250,3 +250,83 @@ form{
     }
   }
 }
+
+@include tablet-s(){
+  #survey-form{
+    padding-top: 15px;
+    .survey-form-wrapper{
+      flex-direction: column;
+      .title{
+        flex: none;
+        width: 100%;
+        h2{
+          padding: 0 4%;
+        }
+        p{
+          padding: 0 4%;
+        }
+      }
+      .form-wrapper{
+        flex: none;
+        width: 100%;
+        padding-left: 0!important;
+        form {
+          .row {
+            flex-direction: column;
+            .input-container {
+              margin-bottom: 15px;
+              &:first-child {
+                margin-left: 0;
+              }
+              &:last-child {
+                margin-right: 0;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  #questions-forms {
+    textarea{
+      margin-right: 4%;
+    }
+    .container {
+      width: 100%;
+      margin-bottom: 35px;
+    }
+    .pq-form-wrapper,.oq-form-wrapper{
+      width: 100%;
+      .head-title{
+        padding-left: 8%;
+        padding-right: 8%;
+      }
+      .table-wrapper{
+        padding-left: 0;
+        padding-right: 0;
+        margin-bottom: 0;
+        ul.table{
+          >li{
+            height: auto;
+            padding-top: 7px;
+            padding-bottom: 7px;
+            flex-direction: column;
+            .question{
+              width: 100%;
+              margin-bottom: 15px;
+            }
+            ul.answers{
+              width: 100%;
+            }
+          }
+        }
+      }
+    }
+    .oq-form-wrapper{
+      .grad-btn{
+        margin-top: 35px;
+        align-self: center;
+      }
+    }
+  }
+}

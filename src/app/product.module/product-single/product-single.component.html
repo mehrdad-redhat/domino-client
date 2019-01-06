@@ -18,6 +18,7 @@
           <img class="side" src="../../../assets/images/talebi/t2.png">
           <img class="side" src="../../../assets/images/talebi/t3.png">
           <img class="side" src="../../../assets/images/talebi/t4.png">
+          <img class="side" src="../../../assets/images/product-grid/friuty-logo.png">
         </div>
         <div class="ctrl ctrl-left">
           <i class="dfi dfi-arrow-left"></i>
@@ -47,7 +48,7 @@
     </div>
   </section>
   <section id="attributes">
-    <svg xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMinYMin slice" viewBox="0 0 1299.9 735.96">
+    <svg id="big" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMinYMin slice" viewBox="0 0 1299.9 735.96">
       <defs>
         <style>
           .pr-blue {
@@ -68,6 +69,16 @@
       <path class="pr-blue"
             d="M439.5,736h860.4V12.26c-282.6-57.9-568.5,106.9-882.3,129-86,6.1-174.1,1.5-264.7-21.4-54.1-13.6-122.1-19-152.9-19H0v635H439.5Z"/>
     </svg>
+    <svg id="small" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 375 22">
+      <defs>
+        <style>
+          .small-bc-prome-down {
+            fill: #F4F3F0;
+          }
+        </style>
+      </defs>
+      <path class="small-bc-prome-down" d="M375,0H0C46.33,12.58,110.32,22,187,22,264.15,22.05,328.51,12.62,375,0Z"/>
+    </svg>
 
     <div class="container flex-row attr-container">
       <div class="pr-3dmodel">
@@ -87,7 +98,7 @@
             </div>
             <h3>مشخصات محصول</h3>
           </div>
-          <div class="pr-props-content" [class.active]="true">
+          <div class="pr-props-content" [class.active]="activeProp">
             <div class="prop-group flex-col">
               <div class="prop-group-title">
                 <div class="dot-sign"></div>
@@ -130,7 +141,7 @@
             </div>
             <h3>مواد مغذی</h3>
           </div>
-          <div class="pr-props-content" [class.active]="false">
+          <div class="pr-props-content" [class.active]="!activeProp">
             <div class="prop-group">
               <div class="prop-group-title">
                 <div class="dot-sign"></div>
@@ -174,7 +185,7 @@
       <ul>
         <li *ngFor="let p of articles">
           <a class="container" [routerLink]="['blog',p.alias]">
-            <svg class="insta-card-down-wrapper" viewBox="0 0 360 142" >
+            <svg class="insta-card-down-wrapper" viewBox="0 0 360 142">
               <path class="insta-card-down" d="M360,142 H0 V0 Q180,30,360,0 V142"/>
             </svg>
             <svg class="insta-card-up-wrapper" viewBox="0 0 360 162">
