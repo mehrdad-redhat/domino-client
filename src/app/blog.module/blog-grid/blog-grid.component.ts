@@ -56,7 +56,7 @@ export class BlogGridComponent implements OnInit, AfterViewInit {
     ];
 
     this.route.queryParams.subscribe(params => {
-      this.activeHeader = params['category'];
+      // this.activeHeader = params['category'];
       this.breadCrumbLinks = [
         {
           title: 'صفحه اصلی',
@@ -72,7 +72,6 @@ export class BlogGridComponent implements OnInit, AfterViewInit {
         }
       ];
       this.categoryPosition = this.activeHeader == 'cooking' ? 2 : (this.activeHeader == 'news' ? 1 : 3);
-      console.log(this.categoryPosition);
       if(window.innerWidth<=767){
         let timer=setTimeout(()=>{
           this.parent.nativeElement.style.transform = 'rotate(' + ((this.categoryPosition - 2) * 60) + 'deg)';
@@ -96,7 +95,6 @@ export class BlogGridComponent implements OnInit, AfterViewInit {
   activeCategory(){
     let titles = this.parent.nativeElement.children;
     for (let t = 0; t < 3; t++) {
-      // console.log(titles[t].style);
       if (this.categoryPosition - 1 == t) {
         titles[t].classList.add('active');
         titles[t].classList.remove('unActive');

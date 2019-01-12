@@ -148,7 +148,7 @@ section#menu {
   &.active {
     ul {
       opacity: 1;
-      height: auto;
+      height: 60px;
     }
   }
   ul {
@@ -173,7 +173,7 @@ section#menu {
       padding: 20px 15px;
       font-size: 1em;
       line-height: 1.5;
-      letter-spacing: 0.2px;
+
       text-align: left;
       color: #666666;
       border-top: 1px solid #E7E7E6;
@@ -200,7 +200,7 @@ section#menu {
     margin-bottom: 100px;
     li {
       font-size: .875em;
-      letter-spacing: -0.4px;
+
       text-align: center;
       padding-left: 15px;
       padding-right: 15px;

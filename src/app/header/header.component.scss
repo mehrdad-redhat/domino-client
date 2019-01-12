@@ -60,6 +60,12 @@ header {
               width: 100px;
             }
           }
+          &:hover{
+            opacity: 1;
+            .moving-bar{
+              width: 50px;
+            }
+          }
           span {
             cursor: pointer;
           }
@@ -235,7 +241,7 @@ div.menu-container{
             font-size: 1em;
             font-weight: 300;
             line-height: 1.19;
-            letter-spacing: -0.4px;
+
             color: $main-text-color;
             padding-left: 28px;
             padding-right: 28px;

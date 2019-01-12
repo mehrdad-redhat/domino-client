@@ -111,7 +111,7 @@ section#header {
       .description {
         display: flex;
         flex-direction: column;
-        align-items: center;
+        //align-items: center;
         flex: 1;
         p.caption {
           font-size: 2.25em;
@@ -119,7 +119,7 @@ section#header {
           font-style: normal;
           font-stretch: normal;
           line-height: 1.6;
-          letter-spacing: -0.9px;
+
           text-align: right;
           color: $main-text-color;
           margin-bottom: 14px;
@@ -138,7 +138,7 @@ section#header {
             font-style: normal;
             font-stretch: normal;
             line-height: 1.75;
-            letter-spacing: -0.6px;
+
             text-align: center;
             color: $main-text-color;
             border-radius: 26px;
@@ -185,13 +185,13 @@ section.about {
     font-style: normal;
     font-stretch: normal;
     line-height: 1.75;
-    letter-spacing: -0.3px;
+
     text-align: justify;
     text-align-last: center;
     -moz-text-align-last: center;
     color: $main-background;
   }
-  .grad-btn {
+  .btn-fill {
     margin-top: 150px;
   }
 }
@@ -218,7 +218,7 @@ section.about.small-device{
       margin-bottom: 90px;
       margin-top: 55px;
     }
-    .grad-btn{
+    .btn-fill{
       margin-top: 0;
       margin-bottom: 82px;
     }
@@ -267,7 +267,7 @@ section#features {
         > li {
           font-size: .875em;
           line-height: 1.79;
-          letter-spacing: -0.3px;
+
           text-align: center;
           color: $light-gray-text;
           margin-bottom: 8px;
@@ -390,7 +390,7 @@ section#features {
         span {
           font-size: 16px;
           line-height: 1.75;
-          letter-spacing: -0.3px;
+
           text-align: center;
           color: $light-gray-text;
         }
@@ -467,7 +467,7 @@ section#domino-book {
         opacity: 0.75;
         font-size: 16px;
         line-height: 1.69;
-        letter-spacing: -1.3px;
+
         text-align: right;
         color: $dark-gary-text;
         margin-bottom: 15px;
@@ -475,7 +475,7 @@ section#domino-book {
       a {
         font-size: 0.75em;
         line-height: 1.75;
-        letter-spacing: -0.3px;
+
         color: #bababa;
         align-self: flex-end;
         cursor: pointer;
@@ -493,7 +493,7 @@ section#domino-book {
     }
   }
 
-  .grad-btn{
+  .btn-fill{
     margin-top: 20px;
   }
   .domino-section-element.blue{
@@ -639,6 +639,7 @@ section#domino-book {
         }
         .description{
           flex: none;
+          align-items: center;
           p.caption{
             width: 100%;
             text-align: center;
@@ -697,7 +698,7 @@ section#domino-book {
       margin-bottom: 30px;
       justify-content: center!important ;
     }
-    .grad-btn{
+    .btn-fill{
       margin-bottom: 60px;
     }
     .domino-section-element.blue {

@@ -48,7 +48,6 @@ export class InstaFeedComponent implements OnInit {
       })
     }
     this.instaInfo=this.instaInfo.slice(0,postNumber);
-    console.log(this.instaInfo);
   }
 
 }

@@ -45,7 +45,7 @@ section#about-text{
       align-self: flex-end;
       font-weight: bold;
       line-height: 1.32;
-      letter-spacing: -0.8px;
+
     }
   }
 }
@@ -146,7 +146,7 @@ section#about-features{
         span{
           font-size: .75em;
           line-height: 1.75;
-          letter-spacing: -0.3px;
+
           text-align: center;
           color: $dark-gary-text;
         }
@@ -194,7 +194,7 @@ section#about-features{
           h4.title{
             font-size: 1.25em;
             line-height: 1.75;
-            letter-spacing: -0.4px;
+
             color: #4d4d4d;
             margin-bottom: 10px;
           }
@@ -214,7 +214,7 @@ section#about-features{
               flex-grow: 1;
               font-size: 1em;
               line-height: 1.75;
-              letter-spacing: -0.3px;
+
               text-align: justify;
               text-align-last: right;
               -moz-text-align-last: right;

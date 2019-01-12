@@ -20,7 +20,7 @@ footer{
           font-size: 0.875em;
           font-weight: bold;
           line-height: 1.79;
-          letter-spacing: 0.1px;
+
           text-align: center;
           color: $main-background;
           display: flex;
@@ -39,6 +39,12 @@ footer{
                 width: 100px;
               }
             }
+            &:hover{
+              opacity: 1;
+              .moving-bar{
+                width: 50px;
+              }
+            }
           }
 
           span {
@@ -54,8 +60,8 @@ footer{
           display: flex;
           justify-content: center;
           align-items: center;
-          height: 54px;
-          width: 54px;
+          height: 30px;
+          width: 30px;
           border-radius: 100%;
           transition: all .4s ease;
           margin-left: 5px;
@@ -70,11 +76,11 @@ footer{
             }
           }
           i{
-            font-size: 1.6em;
+            font-size: 1em;
             color:#748086;
             transition: all .4s ease;
             &.dfi-twitter{
-              font-size: 1.5em;
+              font-size: .9em;
             }
           }
           &:hover{
@@ -114,7 +120,7 @@ footer{
         font-size: 0.625em;
         font-weight: 500;
         line-height: 1.6;
-        letter-spacing: 1.5px;
+
         color: #dff4ff;
       }
       .copyright{

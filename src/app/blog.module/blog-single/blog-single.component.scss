@@ -92,13 +92,13 @@ section#title{
         font-size: 1.875em;
         font-weight: bold;
         line-height: 1.7;
-        letter-spacing: -0.5px;
+
         color: #4d4d4d;
       }
       .author{
         font-size: .875em;
         line-height: 1.79;
-        letter-spacing: -0.2px;
+
         text-align: right;
         span:first-child{
           color: #b3b3b3;
@@ -127,7 +127,7 @@ section#title{
           span{
             font-size: .625em;
             line-height: 1.7;
-            letter-spacing: -0.3px;
+
             text-align: center;
             color: #b3b3b3;
             margin-left: 10px;
@@ -187,7 +187,7 @@ section#comments{
       font-size: 1.25em;
       font-weight: bold;
       line-height: 1.75;
-      letter-spacing: -0.3px;
+
       text-align: right;
       color: #4d4d4d;
     }
@@ -197,15 +197,17 @@ section#comments{
     list-style-type: none;
     width: 100%;
     li{
-      margin-bottom: 45px;
+      margin-bottom: 25px;
       display: flex;
       flex-direction: column;
+      border-bottom: 1px solid #eeeeee;
+      padding-bottom: 25px;
       header{
-        margin-bottom: 24px;
+        margin-bottom: 25px;
         .author{
           font-size:.875em;
           line-height: 1.71;
-          letter-spacing: 0.1px;
+
           text-align: left;
           color: #4d4d4d;
           margin-left: 5px;
@@ -214,7 +216,7 @@ section#comments{
           opacity: 0.5;
           font-size: .625em;
           line-height: 1.6;
-          letter-spacing: 1.5px;
+
           text-align: right;
           color: #000000;
         }
@@ -223,7 +225,7 @@ section#comments{
         opacity: 0.75;
         font-size: .75em;
         line-height: 2.08;
-        letter-spacing: 0.2px;
+
         text-align: right;
         color: #000000;
       }
@@ -252,7 +254,7 @@ section#comments{
     .grad-btn{
       font-size: .875em;
       line-height: 1.79;
-      letter-spacing: 5px;
+
       text-align: center;
       color: $main-background;
       align-self: flex-end;
