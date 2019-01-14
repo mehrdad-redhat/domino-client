@@ -22,7 +22,9 @@
         height: 100%;
         display: flex;
         flex-direction: column;
+        transition: all .4s ease;
         &:hover{
+          box-shadow: 0 5px 9px 0 #00000029;
           svg path.insta-card-down{
             d: path("M360,142 H0 V0 Q180,0 360,0 V142");
 

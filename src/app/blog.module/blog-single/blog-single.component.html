@@ -24,7 +24,7 @@
     </svg>
     <div class="navigator-wrapper">
       <div class="container flex-row jus-between al-center">
-        <a [routerLink]="['/blog']"><i class="dfi dfi-close"></i></a>
+        <a [routerLink]="['/']"><i class="dfi dfi-close"></i></a>
         <d-bread-crumb [links]="breadCrumbLinks" [white]="true"></d-bread-crumb>
       </div>
     </div>
@@ -145,21 +145,20 @@
       <form class="new-cm flex-col">
         <div class="top flex-row">
           <div class="material-form-item">
-            <input type="text" id="full-name" placeholder="&nbsp;">
-            <label for="full-name" data-label="نام و نام خانوادگی"></label>
+            <d-material-input [label]="'نام و نام خانوادگی'" [type]="'text'"></d-material-input>
           </div>
           <div class="material-form-item">
-            <input type="email" id="email" placeholder="&nbsp;">
-            <label for="email" data-label="ایمیل"></label>
+            <d-material-input [placeholder]="'qadcrm@gmail.com'" [placeholderDir]="'ltr'" [dir]="'ltr'"
+                              [label]="'ایمیل'" [type]="'email'"></d-material-input>
           </div>
         </div>
         <div class="bottom flex-row">
           <div class="material-form-item">
-            <textarea id="message" placeholder="&nbsp;"></textarea>
-            <label for="message" data-label="پیام"></label>
+            <d-material-input [mode]="'textarea'" [name]="'message'" [title]="'message'" [maxlength]="435"
+                              [label]="'پیام *'"></d-material-input>
           </div>
         </div>
-        <button type="submit" class="grad-btn">ارسال پیام</button>
+        <button type="submit" class="btn-fill"><span>ارسال پیام</span></button>
       </form>
     </div>
   </section>

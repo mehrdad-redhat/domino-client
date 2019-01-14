@@ -83,9 +83,48 @@ $secondaryColumnNumber: 3;
 
 
 
-/*****************************  COLORS  - start ************************/
+/*****************************  ANIMATION  - start ************************/
+
+@mixin wiggle($name,$dir,$value){
+  @if $dir == 'vertical'{
+    @keyframes #{$name} {
+      0%{
+        transform: translateY(-$value);
+      }
+      25%{
+        transform: translateY($value);
+      }
+      50%{
+        transform: translateY(-$value);
+      }
+      75%{
+        transform: translateY($value);
+      }
+      100%{
+        transform: translateY(-$value);
+      }
+    }
+  } @else {
+    @keyframes #{$name} {
+      0%{
+        transform: translateX(-$value);
+      }
+      25%{
+        transform: translateX($value);
+      }
+      50%{
+        transform: translateX(-$value);
+      }
+      75%{
+        transform: translateX($value);
+      }
+      100%{
+        transform: translateX(-$value);
+      }
+    }
+  }
+}
 
 
-
-/*****************************  COLORS  - end ************************/
+/*****************************  ANIMATION  - end ************************/
 

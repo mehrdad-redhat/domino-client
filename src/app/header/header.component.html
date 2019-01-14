@@ -46,7 +46,7 @@
   <div  class="overlay-menu">
     <div class="menu-wrapper">
       <section class="top wi-100 flex-row jus-between">
-        <i class="dfi dfi-close" (click)="navMenuActive=false"></i>
+        <a [routerLink]="['/']"><i class="dfi dfi-close"></i></a>
         <a [routerLink]="['/']" class="flex-row al-center">
           <img src="../../assets/images/logo.png" alt="logo">
         </a>

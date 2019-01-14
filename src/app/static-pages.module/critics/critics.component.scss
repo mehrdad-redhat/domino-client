@@ -122,7 +122,7 @@ section#header {
               align-items: flex-start;
               min-height: 160px;
             }
-            .grad-btn {
+            .btn-fill {
               margin-top: 32px;
               font-size: .875em;
               line-height: 1.79;
@@ -171,7 +171,7 @@ section#header {
               &:last-child {
                 margin-right: 0;
               }
-              .grad-btn {
+              .btn-fill {
                 align-self: center;
               }
             }

@@ -1,14 +1,14 @@
 @import "colors.scss";
 @import "variables.scss";
 
-p{
+p {
   font-size: 1.125em;
   line-height: 1.94;
   text-align: right;
   color: #707070;
 }
 
-.divider{
+.divider {
   align-self: center;
   width: 100px;
   height: 1px;
@@ -17,7 +17,7 @@ p{
   margin-bottom: 45px;
 }
 
-h3{
+h3 {
   font-size: 1.25em;
   font-weight: bold;
   line-height: 1.75;
@@ -27,40 +27,53 @@ h3{
   align-self: center;
 }
 
-.image-holder{
+.image-holder {
   margin-top: 28px;
   margin-bottom: 55px;
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  >.img-container{
+  > .img-container {
     flex: 1;
     padding-left: 12px;
     padding-right: 12px;
   }
-  img{
+  ///* one item */
+  //>.img-container:only-child {
+  //  /* -or- >.img-container:only-child { */
+  //  padding-left: 0;
+  //  padding-right: 0;
+  //}
+  >.img-container:first-child{
+    padding-right: 0;
+  }
+  >.img-container:last-child{
+    padding-left: 0;
+  }
+
+  img {
     width: 100%;
     height: auto;
     border-radius: 20px;
   }
 }
 
-.step{
+.step {
   display: flex;
   flex-direction: column;
   width: 100%;
 }
 
-.tools-material{
+.tools-material {
   display: flex;
   flex-wrap: wrap;
   padding-left: 12px;
   padding-right: 12px;
-  >div{
+  > div {
     width: 50%;
     display: flex;
     flex-direction: column;
-    h4{
+    h4 {
       font-size: 1.125em;
       font-weight: bold;
       line-height: 1.72;
@@ -69,65 +82,65 @@ h3{
       color: #666666;
       margin-bottom: 29px;
     }
-    ul{
+    ul {
       display: flex;
       flex-direction: column;
       list-style-type: none;
-      li{
+      li {
         display: flex;
         align-items: center;
         margin-bottom: 30px;
-        :last-child{
+        :last-child {
           margin-bottom: 0;
         }
-        .line{
+        .line {
           width: 1px;
           height: 13px;
           background-color: #bdbdbd;
           margin-right: 10px;
           margin-left: 10px;
         }
-        .dot{
+        .dot {
           width: 5px;
           height: 5px;
           background-color: #b3b3b3;
           border-radius: 100%;
           margin-left: 10px;
         }
-        span{
+        span {
           font-size: 1em;
           line-height: 1.75;
 
           text-align: right;
           color: #666666;
         }
-        .value{
-          color:#b3b3b3;
+        .value {
+          color: #b3b3b3;
         }
       }
     }
   }
 }
 
-@include tablet-s(){
-  p{
-    padding-left: 2%!important;
-    padding-right: 2%!important;
-    text-align: justify!important;
-    text-align-last: right!important;
-    -moz-text-align-last: right!important;
+@include tablet-s() {
+  p {
+    padding-left: 2% !important;
+    padding-right: 2% !important;
+    text-align: justify !important;
+    text-align-last: right !important;
+    -moz-text-align-last: right !important;
   }
 
-  .image-holder{
+  .image-holder {
     flex-direction: column;
-    >.img-container{
+    > .img-container {
       margin-bottom: 12px;
     }
   }
 
-  .tools-material{
+  .tools-material {
     flex-direction: column;
-    >div{
+    > div {
       width: 100%;
     }
   }

@@ -18,7 +18,7 @@
 
     <div class="navigator-wrapper">
       <div class="container flex-row jus-between al-center">
-        <i class="dfi dfi-close" style="cursor: pointer;" (click)="activeHeader=''"></i>
+        <a [routerLink]="['/']"><i class="dfi dfi-close"></i></a>
         <d-bread-crumb [links]="breadCrumbLinks" [white]="true"></d-bread-crumb>
       </div>
     </div>

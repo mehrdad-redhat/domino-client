@@ -9,6 +9,7 @@ export class SurveyComponent implements OnInit {
 
   constructor() {
   }
+  phonePattern="^(9|(09)|(\\+989))(((1)|(3)|(2))([0-9]))(\\d{7})";
 
   ngOnInit() {
 

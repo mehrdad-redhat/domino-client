@@ -5,6 +5,7 @@ import {OnlyNumbersAllowedDirective} from "./directives/only-numbers-allowed.dir
 import { BreadCrumbComponent } from './components/bread-crumb/bread-crumb.component';
 import { ModelViewerComponent } from './components/model-viewer/model-viewer.component';
 import {RouterModule} from '@angular/router';
+import { MaterialInputComponent } from './components/material-input/material-input.component';
 
 
 @NgModule({
@@ -16,12 +17,14 @@ import {RouterModule} from '@angular/router';
   declarations: [
     OnlyNumbersAllowedDirective,
     BreadCrumbComponent,
-    ModelViewerComponent
+    ModelViewerComponent,
+    MaterialInputComponent
   ],
   exports: [
     PipesModule,
     BreadCrumbComponent,
-    ModelViewerComponent
+    ModelViewerComponent,
+    MaterialInputComponent
   ]
 })
 export class SharedModule {

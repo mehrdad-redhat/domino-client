@@ -124,26 +124,6 @@ section#header {
           color: $main-text-color;
           margin-bottom: 14px;
         }
-        button.outer {
-          width: 220px;
-          height: 55px;
-          background-image: linear-gradient(to right, #feae62 0%, #d53f56 100%);
-          border-radius: 26px;
-          button.inner {
-            background-color: #1f5bbb;
-            width: 214px;
-            height: 49px;
-            font-size: 1em;
-            font-weight: bold;
-            font-style: normal;
-            font-stretch: normal;
-            line-height: 1.75;
-
-            text-align: center;
-            color: $main-text-color;
-            border-radius: 26px;
-          }
-        }
       }
       .images {
         position: relative;
@@ -157,13 +137,31 @@ section#header {
           z-index: 10;
           position: absolute;
           width: 100%;
-
           max-width: 630px;
+          &:nth-child(1){
+            animation:wiggle-v  9s ease-in-out;
+            animation-delay: 0ms;
+            animation-iteration-count: infinite;
+          }
+          &:nth-child(2){
+            animation:wiggle-h  9s ease-in-out;
+            animation-delay: 50ms;
+            animation-iteration-count: infinite;
+          }
+          &:nth-child(3){
+            animation:wiggle-h-10  7s ease-in-out;
+            animation-delay: 250ms;
+            animation-iteration-count: infinite;
+          }
         }
       }
     }
   }
 }
+
+@include wiggle(wiggle-v,vertical,5px);
+@include wiggle(wiggle-h,horizontal,5px);
+@include wiggle(wiggle-h-10,horizontal,10px);
 
 section.about {
   z-index: 5;
@@ -569,6 +567,26 @@ section#domino-book {
   }
 }
 
+
+@include fourK(){
+  section#domino-book{
+    .btn-fill{
+      border: 1px solid #fff;
+      span {
+        color: #fff;
+      }
+      &:hover {
+        span {
+          color: $primary-dark-blue;
+        }
+      }
+      &::after {
+        background-color: #fff;
+      }
+    }
+  }
+}
+
 @include laptop-m() {
   section#header {
     svg {
@@ -576,8 +594,6 @@ section#domino-book {
     }
   }
 }
-
-
 
 @include tablet() {
   section#header {
@@ -644,7 +660,7 @@ section#domino-book {
             width: 100%;
             text-align: center;
           }
-          button.outer{
+          button.btn-fill{
             margin-top: 35px;
             margin-bottom: 90px;
           }
@@ -764,4 +780,3 @@ section#domino-book {
   }
 }
 
-// TODO:remove touch box from everything
