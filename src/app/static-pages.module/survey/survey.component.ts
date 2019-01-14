@@ -1,4 +1,5 @@
 import {Component, OnInit} from '@angular/core';
+import {Answer, SurveyQuestions} from '../../_models/interfaces';
 
 @Component({
   selector: 'd-survey',
@@ -193,19 +194,4 @@ export class SurveyComponent implements OnInit {
 }
 
 
-interface SurveyQuestions {
-  productQuestion: Question[];
-  otherQuestions: Question[]
-}
 
-interface Question {
-  id:number;
-  text:string;
-  answer:number;
-}
-
-interface Answer {
-  id:number;
-  text:string;
-  value:number;
-}

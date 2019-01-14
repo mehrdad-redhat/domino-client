@@ -1,6 +1,6 @@
 import {Component, OnInit, ViewChild} from '@angular/core';
 import {ActivatedRoute, Router} from '@angular/router';
-import {Link} from '../../_shared.module/components/bread-crumb/bread-crumb.component';
+import {Link} from '../../_models/interfaces';
 
 @Component({
   selector: 'd-product-grid',

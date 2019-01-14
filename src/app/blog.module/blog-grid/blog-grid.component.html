@@ -32,20 +32,20 @@
     </div>
     <div #parent class="container titles flex-row jus-center">
 
-      <div #right class="title" [class.unActive]="(activeHeader=='cooking') || (activeHeader=='campaigns')" [class.active]="activeHeader=='news'">
+      <div #right class="title" [class.unActive]="(activeHeader=='cooking') || (activeHeader=='campaign')" [class.active]="activeHeader=='news'">
         <a [routerLink]="['/blog']" [queryParams]="{category: 'news'}"><h1 (click)="activeHeader='news'">اخبار</h1></a>
         <div class="line" >
           <div class="circle"></div>
         </div>
       </div>
-      <div #center class="title" [class.unActive]="activeHeader=='campaigns' || (activeHeader=='news')" [class.active]="activeHeader=='cooking'" style="margin-left: 20%;margin-right: 20%;">
+      <div #center class="title" [class.unActive]="activeHeader=='campaign' || (activeHeader=='news')" [class.active]="activeHeader=='cooking'" style="margin-left: 20%;margin-right: 20%;">
         <a [routerLink]="['/blog']" [queryParams]="{category: 'cooking'}"><h1 (click)="activeHeader='cooking'">آشپزی</h1></a>
         <div class="line" >
           <div class="circle"></div>
         </div>
       </div>
-      <div #left class="title" [class.unActive]="activeHeader=='cooking' || (activeHeader=='news')" [class.active]="activeHeader=='campaigns'">
-        <a [routerLink]="['/blog']" [queryParams]="{category: 'campaigns'}"><h1 (click)="activeHeader='campaigns'">کمپین‌ها</h1></a>
+      <div #left class="title" [class.unActive]="activeHeader=='cooking' || (activeHeader=='news')" [class.active]="activeHeader=='campaign'">
+        <a [routerLink]="['/blog']" [queryParams]="{category: 'campaign'}"><h1 (click)="activeHeader='campaign'">کمپین‌ها</h1></a>
         <div class="line" >
           <div class="circle"></div>
         </div>

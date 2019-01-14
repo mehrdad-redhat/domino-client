@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {HomeService} from '../home.service';
+import {InstaInfo} from '../../_models/interfaces';
 
 @Component({
   selector: 'd-insta-feed',
@@ -52,10 +53,4 @@ export class InstaFeedComponent implements OnInit {
 
 }
 
-interface InstaInfo {
-  thumbnail:string;
-  likeNumbers:number;
-  isItVideo:boolean;
-  caption:string;
-  shortCode:string;
-}
+

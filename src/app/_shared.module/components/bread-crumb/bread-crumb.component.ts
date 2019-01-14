@@ -1,4 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
+import {Link} from '../../../_models/interfaces';
 
 @Component({
   selector: 'd-bread-crumb',
@@ -17,8 +18,3 @@ export class BreadCrumbComponent implements OnInit {
 
 }
 
-export interface Link {
-  title:string;
-  link:string;
-  queryParams?:any;
-}

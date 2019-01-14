@@ -191,19 +191,19 @@
     <defs>
       <filter id="shadowed-goo">
 
-        <feGaussianBlur in="SourceGraphic" result="blur" stdDeviation="10"/>
-        <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -7" result="goo"/>
-        <feGaussianBlur in="goo" stdDeviation="3" result="shadow"/>
+        <feGaussianBlur in="SourceGraphic" result="blur" stdDeviation="10"></feGaussianBlur>
+        <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -7" result="goo"></feColorMatrix>
+        <feGaussianBlur in="goo" stdDeviation="3" result="shadow"></feGaussianBlur>
         <feColorMatrix in="shadow" mode="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 1 -0.2"
-                       result="shadow"/>
-        <feOffset in="shadow" dx="1" dy="1" result="shadow"/>
-        <feComposite in2="shadow" in="goo" result="goo"/>
-        <feComposite in2="goo" in="SourceGraphic" result="mix"/>
+                       result="shadow"></feColorMatrix>
+        <feOffset in="shadow" dx="1" dy="1" result="shadow"></feOffset>
+        <feComposite in2="shadow" in="goo" result="goo"></feComposite>
+        <feComposite in2="goo" in="SourceGraphic" result="mix"></feComposite>
       </filter>
       <filter id="goo">
-        <feGaussianBlur in="SourceGraphic" result="blur" stdDeviation="10"/>
-        <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -7" result="goo"/>
-        <feComposite in2="goo" in="SourceGraphic" result="mix"/>
+        <feGaussianBlur in="SourceGraphic" result="blur" stdDeviation="10"></feGaussianBlur>
+        <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -7" result="goo"></feColorMatrix>
+        <feComposite in2="goo" in="SourceGraphic" result="mix"></feComposite>
       </filter>
     </defs>
   </svg>

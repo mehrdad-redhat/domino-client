@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {ISelectOption} from '../../_shared.module/components/material-input/material-input.component';
+import {ISelectOption} from '../../_models/interfaces';
 
 @Component({
   selector: 'd-critics',

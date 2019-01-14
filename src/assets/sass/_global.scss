@@ -121,6 +121,8 @@ h3 {
   color: $main-text-color;
 }
 
+@include wiggle(wiggle,vertical,10px);
+
 .domino-section-element {
   display: flex;
   flex-direction: column;

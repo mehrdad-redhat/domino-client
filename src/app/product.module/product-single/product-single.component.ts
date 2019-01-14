@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {Link} from '../../_shared.module/components/bread-crumb/bread-crumb.component';
+import {Link} from '../../_models/interfaces';
 
 @Component({
   selector: 'd-product-single',

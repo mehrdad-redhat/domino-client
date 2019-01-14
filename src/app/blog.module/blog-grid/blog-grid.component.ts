@@ -1,6 +1,6 @@
 import {AfterViewInit, Component, OnInit, ViewChild} from '@angular/core';
-import {Link} from '../../_shared.module/components/bread-crumb/bread-crumb.component';
 import {ActivatedRoute, Router} from '@angular/router';
+import {Link} from '../../_models/interfaces';
 
 @Component({
   selector: 'd-blog-grid',
@@ -112,7 +112,7 @@ export class BlogGridComponent implements OnInit, AfterViewInit {
     } else {
       this.categoryPosition = this.categoryPosition == 1 ? 1 : this.categoryPosition - 1;
     }
-    let category=this.categoryPosition==1?'news':(this.categoryPosition==2?'cooking':'campaigns');
+    let category=this.categoryPosition==1?'news':(this.categoryPosition==2?'cooking':'campaign');
     this.router.navigate(['/blog'], {queryParams:{category:category}}).then();
     this.parent.nativeElement.style.transform = 'rotate(' + ((this.categoryPosition - 2) * 60) + 'deg)';
     this.activeCategory();

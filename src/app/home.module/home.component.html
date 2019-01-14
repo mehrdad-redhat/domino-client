@@ -51,54 +51,48 @@
     <div class="slider-wrapper">
       <div class="controllers-wrapper">
         <div class="controllers">
-          <span class="controll right">
+          <span class="controll right" (click)="slideBrowse('right')">
             <i class="dfi dfi-arrow-right"></i>
           </span>
-          <span class="controll left">
+          <span class="controll left" (click)="slideBrowse('left')">
             <i class="dfi dfi-arrow-left"></i>
           </span>
         </div>
       </div>
       <div class="small-controll-wrapper">
-         <span class="controll right">
+         <span class="controll right" (click)="slideBrowse('right')">
             <i class="dfi dfi-arrow-right"></i>
           </span>
-        <span class="controll left">
+        <span class="controll left" (click)="slideBrowse('left')">
             <i class="dfi dfi-arrow-left"></i>
           </span>
       </div>
-      <div class="slide">
-        <div class="description">
-          <p class="caption">
-            با ما در کمپین خـلاقیت
-            <br>
-            در آشپزی با دسر قاشقی
-            <br>
-            دومیــنــــــو همراه شوید.
-          </p>
-          <button class="btn-fill white">
-            <span>مشاهده شرایط مسابقه</span>
-          </button>
-        </div>
-        <div class="images">
-          <img src="../../assets/images/slider-test/1.png">
-          <img src="../../assets/images/slider-test/2.png">
-          <img src="../../assets/images/slider-test/3.png">
-        </div>
-      </div>
+     <div class="slides">
+       <div class="slide" *ngFor="let s of sliders;let i=index" [class.active]="activeSlide==i">
+         <div class="description">
+           <p class="caption" [innerHTML]="s.caption"></p>
+           <a [routerLink]="[s.button_link]" class="btn-fill white">
+             <span>{{s.button_caption}}</span>
+           </a>
+         </div>
+         <div class="images">
+           <img *ngFor="let img of s.images" [src]="img">
+         </div>
+       </div>
+     </div>
     </div>
     <div class="domino-section-element small">
       <span class="line"></span>
       <span class="circle"></span>
     </div>
-    <section  class="about">
+    <section class="about">
       <div class="container">
         <div class="section-wrapper wi-100">
           <div class="domino-section-element">
             <span class="line"></span>
             <span class="circle"></span>
           </div>
-          <h2 >درباره دومینو</h2>
+          <h2>درباره دومینو</h2>
           <p class="section-inside-wrapper">شرکت لبنیات و بستنی دومینو در سال 1390 با پشتوانه غنی از تجربه و تخصص که
             حاصل بیش از سی سال تلاش مداوم و
             کارآفرینی بنیانگذاران خود که تا قبل از تاسیس دومینو به عنوان یکی از بنیانگذاران و مالکان مجموعه لبنیات و
@@ -232,29 +226,30 @@
         <span class="circle"></span>
       </div>
       <h2>کتاب دومینو</h2>
-      <div class="domino-book-wrapper section-inside-wrapper card">
-        <div class="detail">
-          <h3 class="category">مقاله آشپزی</h3>
-          <h3 class="title">مسابقه دسر قاشقی دومینو</h3>
-          <p>
-            از افتخارات دومینو ساخت و بهره برداری از دومین
-            دستگاه تولیدی بستنی بر اساس تحقیقات و ایده پردازی تیم تحقیق و توسعه و فنی شرکت و تولید بزرگترین تولید گنندگان
-            و شرکت دومینو محفوظ باقی خواهد ماند.
-          </p>
-          <a [routerLink]="['blog','article-2334']">
-          مشاهده مطلب
-          <i class="dfi dfi-dash-arrow-left"></i>
-        </a>
-        </div>
-        <div class="image">
-          <img src="../../assets/images/blog-1.png" alt="">
+      <div class="article-wrapper section-inside-wrapper">
+        <div #articles class="domino-book-wrapper card" *ngFor="let a of dominoBookArticles">
+          <div class="detail">
+            <h3 class="category">{{a.category}}</h3>
+            <h3 class="title">{{a.title}}</h3>
+            <div class="desc">
+              <p>{{a.description}}</p>
+              <div class="fade"></div>
+            </div>
+            <a [routerLink]="['blog',a.alias]">
+              مشاهده مطلب
+              <i class="dfi dfi-dash-arrow-left"></i>
+            </a>
+          </div>
+          <div class="image">
+            <img [src]="a.image_link" alt="">
+          </div>
         </div>
       </div>
       <div class="number-browser-wrapper section-inside-wrapper">
         <ul class="number-browser">
-          <li #numbers (mouseover)="moveGoo($event)">۰۱</li>
-          <li #numbers (mouseover)="moveGoo($event)">۰۲</li>
-          <li #numbers (mouseover)="moveGoo($event)">۰۳</li>
+          <li #numbers (mouseenter)="moveGoo($event,1,false)" (click)="moveGoo($event,1)">۰۱</li>
+          <li #numbers (mouseenter)="moveGoo($event,2,false)" (click)="moveGoo($event,2)">۰۲</li>
+          <li #numbers (mouseenter)="moveGoo($event,3,false)" (click)="moveGoo($event,3)">۰۳</li>
           <li #selectedNum class="selected-num"></li>
         </ul>
       </div>
@@ -270,7 +265,7 @@
           }
         </style>
       </defs>
-      <path class="cls-1" d="M0,0H375V23C328.67,10.42,264.68,1.05,188,1,110.85,1,46.49,10.38,0,23"/>
+      <path class="cls-1" d="M0,0H375V23C328.67,10.42,264.68,1.05,188,1,110.85,1,46.49,10.38,0,23"></path>
     </svg>
     <div class="domino-section-element blue">
       <span class="line"></span>
@@ -285,20 +280,21 @@
     <defs>
       <filter id="shadowed-goo">
 
-        <feGaussianBlur in="SourceGraphic" result="blur" stdDeviation="10"/>
-        <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -7" result="goo"/>
-        <feGaussianBlur in="goo" stdDeviation="3" result="shadow"/>
+        <feGaussianBlur in="SourceGraphic" result="blur" stdDeviation="10"></feGaussianBlur>
+        <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -7"
+                       result="goo"></feColorMatrix>
+        <feGaussianBlur in="goo" stdDeviation="3" result="shadow"></feGaussianBlur>
         <feColorMatrix in="shadow" mode="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 1 -0.2"
-                       result="shadow"/>
-        <feOffset in="shadow" dx="1" dy="1" result="shadow"/>
-        <feComposite in2="shadow" in="goo" result="goo"/>
-        <feComposite in2="goo" in="SourceGraphic" result="mix"/>
+                       result="shadow"></feColorMatrix>
+        <feOffset in="shadow" dx="1" dy="1" result="shadow"></feOffset>
+        <feComposite in2="shadow" in="goo" result="goo"></feComposite>
+        <feComposite in2="goo" in="SourceGraphic" result="mix"></feComposite>
       </filter>
-      <filter id="goo">
-        <feGaussianBlur in="SourceGraphic" result="blur" stdDeviation="10"/>
-        <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -7" result="goo"/>
-        <feComposite in2="goo" in="SourceGraphic" result="mix"/>
-      </filter>
+      <!--<filter id="goo">-->
+      <!--<feGaussianBlur in="SourceGraphic" result="blur" stdDeviation="10"></feGaussianBlur>-->
+      <!--<feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -7" result="goo"></feColorMatrix>-->
+      <!--<feComposite in2="goo" in="SourceGraphic" result="mix"></feComposite>-->
+      <!--</filter>-->
     </defs>
   </svg>
 

@@ -1,0 +1,23 @@
+<div class="wrapper flex-col">
+  <label class="material-textfield">
+    <select *ngIf="mode=='select'" [attr.name]="name">
+      <option *ngFor="let o of options" [value]="o.value">{{o.title}}</option>
+    </select>
+    <input *ngIf="mode=='input'" placeholder=" "
+           [attr.type]="type"
+           [style.direction]="dir"
+           [attr.name]="name"
+           [attr.pattern]="pattern"
+           [attr.title]="title"
+           [attr.maxlength]="maxlength"
+    >
+    <textarea *ngIf="mode=='textarea'" placeholder=" " data-gramm_editor="false"
+              [attr.name]="name"
+              [attr.title]="title"
+              [attr.maxlength]="maxlength"
+    ></textarea>
+    <span>{{label}}</span>
+  </label>
+
+  <span [style.direction]="placeholderDir">{{placeholder}}</span>
+</div>

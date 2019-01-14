@@ -1,0 +1,201 @@
+@import "colors.scss";
+
+.wrapper {
+  >span {
+    margin-top: 8px;
+    font-size: 9px;
+    color:$input-placeholder;
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+}
+
+label {
+  direction: rtl;
+}
+
+textarea {
+  resize: none;
+  min-height: 160px;
+}
+
+i {
+  position: absolute;
+  left: 0;
+}
+
+.material-textfield {
+  width: 100%;
+  position: relative;
+  display: inline-block;
+  padding-top: 6px;
+  font-family: iranyekan, roboto, sans-serif;
+  font-size: 14px;
+  line-height: 1.5;
+  overflow: hidden;
+
+  /* Input, Textarea, select */
+  > input,
+  > textarea,
+  > select {
+    box-sizing: border-box;
+    margin: 0;
+    border: solid 1px $input-normal-border; /* Safari */
+    border-top-color: transparent;
+    border-radius: 4px;
+    padding: 15px 13px 15px;
+    width: 100%;
+    height: inherit;
+    color: $input-text;
+    background-color: transparent;
+    box-shadow: none; /* Firefox */
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+    transition: all 0.1s,border-top-color 5ms;
+
+    /* Placeholder-shown */
+    &:not(:focus):placeholder-shown {
+      border-top-color: $input-normal-border;
+      & + span {
+        font-size: inherit;
+        line-height: 68px;
+        &::before, &::after {
+          border-top-color: transparent;
+        }
+      }
+    }
+
+    /* Span */
+    & + span {
+      position: absolute;
+      top: 0;
+      left: 0;
+      display: flex;
+      border-color: yellow;
+      width: 100%;
+      max-height: 100%;
+      color: $input-placeholder;
+      font-size: 75%;
+      line-height: 15px;
+      cursor: text;
+      transition: all 0.1s;
+
+      /* Corners */
+      &::before, &::after {
+        content: "";
+        display: block;
+        box-sizing: border-box;
+        margin-top: 6px;
+        border-top: 1px solid $input-normal-border;
+        min-width: 10px;
+        height: 8px;
+        pointer-events: none;
+        //box-shadow: inset 0 1px transparent;
+        transition: all 0.1s;
+      }
+      &::before {
+        margin-left: 4px;
+        border-right: solid 1px transparent;
+        border-radius: 0 4px;
+      }
+      &::after {
+        flex-grow: 1;
+        margin-right: 4px;
+        border-left: solid 1px transparent;
+        border-radius: 4px 0;
+      }
+    }
+
+    /* Focus */
+    &:focus {
+      border: 2px solid;
+      border-left-color: $input-focused-border !important;
+      border-right-color: $input-focused-border !important;
+      border-bottom-color: $input-focused-border !important;
+      border-top-color: transparent;
+      //box-shadow: inset 1px 0 $input-focused-border, inset -1px 0 $input-focused-border, inset 0 -1px $input-focused-border;
+      outline: none;
+      & + span {
+        color: $input-focused-label;
+        &::before, &::after {
+          border-top-color: $input-focused-border !important;
+          border-top-width: 2px;
+          //box-shadow: inset 0 1px $input-focused-border;
+        }
+      }
+    }
+
+    /* Disabled */
+    &:disabled {
+      border-color: rgba(0, 0, 0, 0.38) !important;
+      border-top-color: transparent !important;
+      color: rgba(0, 0, 0, 0.38);
+      pointer-events: none;
+      & + span {
+        border-color: rgba(0, 0, 0, 0.38) !important;
+        border-top-color: transparent !important;
+        color: rgba(0, 0, 0, 0.38);
+        pointer-events: none;
+        &::after, &::before {
+          border-top-color: rgba(0, 0, 0, 0.38) !important;
+        }
+      }
+      &:placeholder-shown {
+        border-top-color: rgba(0, 0, 0, 0.38) !important;
+        & + span {
+          border-top-color: rgba(0, 0, 0, 0.38) !important;
+          &::after, &::before {
+            border-top-color: transparent !important;
+          }
+        }
+      }
+    }
+
+    /* invalid */
+    &:invalid {
+      border-color: $input-invalid-border !important;
+      border-top-color: transparent !important;
+      &+span{
+        &::after, &::before {
+          border-top-color: $input-invalid-border !important;
+        }
+      }
+    }
+  }
+
+  /* Hover */
+  &:hover {
+    > input,
+    > textarea,
+    > select {
+      border-color: $input-hover-border;
+      border-top-color: transparent;
+      &:not(:focus):placeholder-shown {
+        border-color: $input-hover-border;
+      }
+      & + span {
+        &::before, &::after {
+          border-top-color: $input-hover-border;
+        }
+      }
+    }
+  }
+
+}
+
+/* Faster transition in Safari for less noticable fractional font-size issue */
+@media not all and (min-resolution: .001dpcm) {
+  @supports (-webkit-appearance:none) {
+    .material-textfield > input,
+    .material-textfield > input + span,
+    .material-textfield > textarea,
+    .material-textfield > textarea + span,
+    .material-textfield > input + span::before,
+    .material-textfield > input + span::after,
+    .material-textfield > textarea + span::before,
+    .material-textfield > textarea + span::after {
+      transition-duration: 0.1s !important;
+    }
+  }
+}
