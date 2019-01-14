@@ -1,15 +1,13 @@
 import { Injectable } from '@angular/core';
-import {Observable} from "rxjs/internal/Observable";
-import {BehaviorSubject} from 'rxjs';
 import {HomeGateway} from './home.gateway';
 
 
 @Injectable()
 export class HomeService {
 
-  private _orderId = new BehaviorSubject<string>('');
-  private _orderDetails = new BehaviorSubject<any>(null);
-  private _orderStatus = new BehaviorSubject<string>('');
+  // private _orderId = new BehaviorSubject<string>('');
+  // private _orderDetails = new BehaviorSubject<any>(null);
+  // private _orderStatus = new BehaviorSubject<string>('');
 
   constructor(private homeGateway:HomeGateway){}
   
@@ -17,7 +15,7 @@ export class HomeService {
     return this.homeGateway.getDataFromInsta();
   }
 
-  sendOrderID(id:string){
+  /*sendOrderID(id:string){
     this._orderId.next(id)
   }
 
@@ -51,7 +49,7 @@ export class HomeService {
 
   getOrderETA(orderId:string,customerId:string){
     return this.homeGateway.getOrderETA(orderId,customerId);
-  }
+  }*/
 
 
 }

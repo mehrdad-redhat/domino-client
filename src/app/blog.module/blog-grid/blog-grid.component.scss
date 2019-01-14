@@ -234,6 +234,7 @@ section#from-blog {
 @media screen and (min-width: 768px) {
   section#header{
     &.active{
+      //noinspection CssInvalidFunction
       svg path.pg-bg-down-curve {
         d: path("M 1056.25 114 A 3000 3000 0 0 0 940.68 114 C 819 114 819 114 819 114 C 650 114 650 114 650 114 A 8000 8000 0 0 0 354 114 a 1000 1000 0 0 0 -88 0 a 1000 1000 0 0 0 -101 0 c -78 0 -78 0 -78 0 A 6000 6000 0 0 0 0 114 v 50 H 1299 V 114 A 10000 10000 0 0 0 1056 114")
       }

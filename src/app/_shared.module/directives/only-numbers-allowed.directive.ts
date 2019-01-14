@@ -1,11 +1,11 @@
-import { Directive, ElementRef, HostListener, Input } from '@angular/core';
+import { Directive, HostListener, Input } from '@angular/core';
 
 @Directive({
   selector: '[sbOnlyNumbersAllowed]'
 })
 export class OnlyNumbersAllowedDirective {
 
-  constructor(private element: ElementRef) {
+  constructor() {
   }
 
   @Input() active=true;

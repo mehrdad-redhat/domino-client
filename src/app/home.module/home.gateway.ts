@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import {HttpClient, HttpHeaders, HttpParams} from '@angular/common/http';
+import {HttpClient, HttpHeaders} from '@angular/common/http';
 
 
 @Injectable()
@@ -13,7 +13,7 @@ export class HomeGateway {
     return this.http.get<any>('https://www.instagram.com/dominodairyco/',{headers});
   }
 
-  getOrderStatus(orderId:string, customerId:string){
+  /*getOrderStatus(orderId:string, customerId:string){
     const body={
       orderId,
       customerId
@@ -37,7 +37,7 @@ export class HomeGateway {
 
     return this.http.post<any>('customer/rate_order',body);
 
-  }
+  }*/
 
 
 }

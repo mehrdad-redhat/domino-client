@@ -1,5 +1,4 @@
 import {AfterViewInit, Component, ElementRef, OnInit, QueryList, ViewChild, ViewChildren} from '@angular/core';
-import {HomeService} from './home.service';
 import {ArticleThumbnail, Slide} from '../_models/interfaces';
 
 @Component({
@@ -17,7 +16,6 @@ export class HomeComponent implements OnInit, AfterViewInit {
 
   dominoBookArticles: ArticleThumbnail[] = [];
   sliders: Slide[] = [];
-  activeDominoBookArticle: number = 1;
   activeSlide:number=0;
 
   constructor() {

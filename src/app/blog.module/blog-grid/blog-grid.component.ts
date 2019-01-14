@@ -55,7 +55,7 @@ export class BlogGridComponent implements OnInit, AfterViewInit {
       }
     ];
 
-    this.route.queryParams.subscribe(params => {
+    this.route.queryParams.subscribe(() => {
       // this.activeHeader = params['category'];
       this.breadCrumbLinks = [
         {

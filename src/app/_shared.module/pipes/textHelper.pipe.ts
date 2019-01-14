@@ -18,7 +18,7 @@ export class TextHelperPipe implements PipeTransform {
         let englishNumbers = ['1','2','3','4','5','6','7','8','9','0'];
 
 
-        let clearText = function (text:any){
+        let clearText = function (text:string){
 
             if(text != null){
 
@@ -26,16 +26,16 @@ export class TextHelperPipe implements PipeTransform {
 
                 if(typeof(text) != 'undefined'){
 
-                    text = text.replace(/0|1|2|3|4|5|6|7|8|9/gi, function(x:any){
+                    text = text.replace(/[0123456789]/gi, function(x:any){
                         return persianNumbers[englishNumbers.indexOf(x)];
                     });
 
-                    text = text.replace(/ي|ك|ى|ة/gi, function(x:any){
+                    text = text.replace(/[يكىة]/gi, function(x:any){
 
                         return persianChars[arabicChars.indexOf(x)];
                     });
 
-                    text = text.replace(/١|٢|٣|٤|٥|٦|٧|٨|٩|٠/gi, function(x:any){
+                    text = text.replace(/[١٢٣٤٥٦٧٨٩٠]/gi, function(x:any){
                         return persianNumbers[arabicNumbers.indexOf(x)];
                     });
 
