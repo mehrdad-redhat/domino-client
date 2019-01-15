@@ -15,7 +15,7 @@ export class BlogGridComponent implements OnInit, AfterViewInit {
   @ViewChild('center') center;
   @ViewChild('left') left;
   @ViewChild('parent') parent;
-  categoryPosition: number ;
+  categoryPosition: number;
   breadCrumbLinks: Link[] = [];
 
   constructor(private route: ActivatedRoute, private router: Router) {
@@ -72,11 +72,11 @@ export class BlogGridComponent implements OnInit, AfterViewInit {
         }
       ];
       this.categoryPosition = this.activeHeader == 'cooking' ? 2 : (this.activeHeader == 'news' ? 1 : 3);
-      if(window.innerWidth<=767){
-        let timer=setTimeout(()=>{
+      if (window.innerWidth <= 767) {
+        let timer = setTimeout(() => {
           this.parent.nativeElement.style.transform = 'rotate(' + ((this.categoryPosition - 2) * 60) + 'deg)';
           clearTimeout(timer);
-        },250);
+        }, 250);
       }
 
       this.activeCategory();
@@ -92,7 +92,7 @@ export class BlogGridComponent implements OnInit, AfterViewInit {
     this.activeCategory();
   }
 
-  activeCategory(){
+  activeCategory() {
     let titles = this.parent.nativeElement.children;
     for (let t = 0; t < 3; t++) {
       if (this.categoryPosition - 1 == t) {
@@ -112,8 +112,8 @@ export class BlogGridComponent implements OnInit, AfterViewInit {
     } else {
       this.categoryPosition = this.categoryPosition == 1 ? 1 : this.categoryPosition - 1;
     }
-    let category=this.categoryPosition==1?'news':(this.categoryPosition==2?'cooking':'campaign');
-    this.router.navigate(['/blog'], {queryParams:{category:category}}).then();
+    let category = this.categoryPosition == 1 ? 'news' : (this.categoryPosition == 2 ? 'cooking' : 'campaign');
+    this.router.navigate(['/blog'], {queryParams: {category: category}}).then();
     this.parent.nativeElement.style.transform = 'rotate(' + ((this.categoryPosition - 2) * 60) + 'deg)';
     this.activeCategory();
 
