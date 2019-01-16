@@ -1,25 +1,24 @@
 @import "colors.scss";
 @import "variables";
 
-
 section#header {
   background: url("/assets/images/static-pages/about-bg-1.jpg") no-repeat top;
 }
 
-section#about-text,section#about2-text{
+section#about-text, section#about2-text {
   position: relative;
   width: 100%;
   display: flex;
   justify-content: center;
-  .section-inside-wrapper{
+  .siw {
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
   }
-  p{
+  p {
     line-height: 1.9;
     font-size: 1.125em;
-    color:$main-text-color;
+    color: $main-text-color;
     margin-top: 40px;
     z-index: 1;
     text-align: justify;
@@ -28,40 +27,46 @@ section#about-text,section#about2-text{
   }
 }
 
-section#about-text{
+section#about-text {
   padding-top: 370px;
   margin-top: -19%;
-  svg{
+  svg {
     position: absolute;
     top: 0;
     width: 100%;
     height: 100%;
+
   }
-  .section-inside-wrapper{
+  .siw {
+    z-index: 99;
     padding-bottom: 136px;
-    h2{
+    h2 {
       font-size: 3.4em;
       color: $main-text-color;
       align-self: flex-end;
       font-weight: bold;
       line-height: 1.32;
-
+      margin-bottom: 90px;
     }
   }
 }
 
-section#about2-text{
+section#about2-text {
   background-size: contain;
-  .container{
+  .container {
     background: url("/assets/images/static-pages/about-el.png") no-repeat center;
+    background-position-y: 5%;
+    background-position-x: 5%;
+    animation: wiggle-bc 6s ease-in-out;
+    animation-iteration-count: infinite;
   }
-  .section-inside-wrapper{
+  .siw {
     align-items: center;
-    p{
-      color:#666666;
-      background-color: rgba(255,255,255,0.8);
+    p {
+      color: #666666;
+      background-color: rgba(255, 255, 255, 0.8);
     }
-    .outer-circle{
+    .outer-circle {
       margin-top: 45px;
       margin-bottom: 46px;
       display: flex;
@@ -70,27 +75,67 @@ section#about2-text{
       width: 695px;
       height: 695px;
       border-radius: 100%;
-      border:1px solid #1ed0ff;
-      .inner-circle{
+      border: 1px solid #1ed0ff;
+      .inner-circle {
         display: flex;
         width: 632.7px;
         height: 632.7px;
         border-radius: 100%;
         overflow: hidden;
-        img{
+        position: relative;
+        img {
+          position: absolute;
+          height: 100%;
           width: 100%;
           object-fit: cover;
+          transition: all .4s ease;
+          opacity: 0;
+          &.active {
+            opacity: 1;
+          }
         }
       }
     }
-    .number-browser-wrapper{
+    .number-browser-wrapper {
       margin-bottom: 76px;
     }
   }
 }
 
-section#about-features{
-  .about-features-wrapper{
+@keyframes wiggle-bc {
+  0% {
+    background-position-y: 5%;
+    background-position-x: 5%;
+  }
+  25% {
+    background-position-y: -5%;
+    background-position-x: 5%;
+  }
+  50% {
+    background-position-y: 5%;
+    background-position-x: -5%;
+  }
+  75% {
+    background-position-y: -5%;
+    background-position-x: -5%;
+  }
+  100% {
+    background-position-y: 5%;
+    background-position-x: 5%;
+  }
+}
+
+@keyframes rotating {
+  from {
+    transform: rotate(0);
+  }
+  to{
+    transform: rotate(359deg);
+  }
+}
+
+section#about-features {
+  .about-features-wrapper {
     border-top: 1px solid #B3B3B3;
     width: 100%;
     display: flex;
@@ -98,7 +143,7 @@ section#about-features{
     align-items: center;
     padding-top: 76px;
     margin-bottom: 99px;
-    .circles-wrapper{
+    .circles-wrapper {
       position: relative;
       display: flex;
       justify-content: center;
@@ -106,7 +151,10 @@ section#about-features{
       width: 416px;
       min-width: 416px;
       height: 416px;
-      .circle{
+      transform: rotate(0);
+      animation: rotating 20s linear;
+      animation-iteration-count: infinite;
+      .circle {
         width: 164px;
         height: 164px;
         border: 3px solid black;
@@ -116,7 +164,20 @@ section#about-features{
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        .icon{
+        transition: all .4s ease;
+        .circle-inside{
+          width: 100%;
+          height: 100%;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          border-radius: 100%;
+          animation: rotating 20s linear;
+          animation-iteration-count: infinite;
+          animation-direction: reverse;
+        }
+        .icon {
           display: flex;
           justify-content: center;
           align-items: center;
@@ -138,12 +199,12 @@ section#about-features{
           }
         }
 
-        i{
-          color:$red-gradient-end;
+        i {
+          color: $red-gradient-end;
           margin-bottom: 10px;
           font-size: 2em;
         }
-        span{
+        span {
           font-size: .75em;
           line-height: 1.75;
 
@@ -151,58 +212,53 @@ section#about-features{
           color: $dark-gary-text;
         }
         &:nth-child(1) {
-          transform: translate(0.000px,-120.000px);
           border-color: #6cb5de;
         }
 
         &:nth-child(2) {
-          transform: translate(-114.127px,-37.082px);
           border-color: #feae62;
 
         }
 
         &:nth-child(3) {
-          transform: translate(-70.534px,97.082px);
           border-color: #76dc8f;
         }
 
         &:nth-child(4) {
-          transform: translate(70.534px,97.082px);
           border-color: #23419b;
         }
 
         &:nth-child(5) {
-          transform: translate(114.127px,-37.082px);
           border-color: #d53f56;
         }
       }
     }
-    .feature-texts{
+    .feature-texts {
       flex-grow: 1;
       height: 100%;
       padding: 0 35px;
       display: flex;
       justify-content: space-between;
-      .column{
+      .column {
         display: flex;
         flex-direction: column;
-        flex:1;
-        .feature-group{
+        flex: 1;
+        .feature-group {
           display: flex;
           flex-direction: column;
           margin-bottom: 25px;
-          h4.title{
+          h4.title {
             font-size: 1.25em;
             line-height: 1.75;
 
             color: #4d4d4d;
             margin-bottom: 10px;
           }
-          .desc{
+          .desc {
             display: flex;
             margin-bottom: 13px;
             align-items: center;
-            .circle{
+            .circle {
               width: 6px;
               min-width: 6px;
               height: 6px;
@@ -210,7 +266,7 @@ section#about-features{
               background-color: $primary-red;
               margin-left: 8px;
             }
-            p{
+            p {
               flex-grow: 1;
               font-size: 1em;
               line-height: 1.75;
@@ -228,14 +284,98 @@ section#about-features{
   }
 }
 
-@include laptop(){
-  section#about-text{
+@include laptop() {
+  section#about-text {
     margin-top: -23.5%;
   }
 }
 
-@include tablet(){
-  section#about-text{
+@include tablet() {
+  section#about-text {
     margin-top: -36%;
+  }
+  section#about-features{
+    .about-features-wrapper{
+      flex-direction: column;
+
+      .feature-texts{
+        flex-direction: column;
+        flex-grow: unset;
+        .column{
+          flex: unset;
+          width: 100%;
+          margin-left: 0!important;
+          margin-right: 0!important;
+        }
+      }
+    }
+  }
+}
+
+@include tablet-s() {
+  section#about-text {
+    margin-top: 0;
+    padding-top: 25px;
+    background-image: linear-gradient(to bottom, #1ed0ff, #126dff);
+    .section-inside-wrapper {
+      h2 {
+        align-self: center;
+        margin-bottom: 30px;
+      }
+    }
+    svg#big {
+      display: none !important;
+    }
+  }
+
+  section#about2-text {
+    .container {
+      background: url("/assets/images/static-pages/about-el-small.png") no-repeat center;
+      background-size: contain;
+      background-position-y: top;
+      animation-duration: 5s;
+    }
+    .section-inside-wrapper {
+      p {
+        background-color: transparent;
+      }
+      .outer-circle {
+        width: 95vw;
+        height: 95vw;
+        .inner-circle {
+          width: 91%;
+          height: 91%;
+          img {
+            width: 100%;
+            height: 100%;
+
+          }
+        }
+      }
+    }
+  }
+
+
+}
+
+@include mobile-l(){
+  section#about-features{
+    .about-features-wrapper{
+      .circles-wrapper{
+        width: 95vw;
+        height: 95vw;
+        min-width: unset;
+        .circle{
+          width: 129px;
+          height: 129px;
+          i{
+            font-size: 1.8em;
+          }
+          span{
+            font-size: .55em;
+          }
+        }
+      }
+    }
   }
 }

@@ -1,6 +1,7 @@
 import {Component, OnInit, ViewChild} from '@angular/core';
 import {ActivatedRoute, Router} from '@angular/router';
 import {Link} from '../../_models/interfaces';
+import {productGridList} from '../../_data/mock-data';
 
 @Component({
   selector: 'd-product-grid',
@@ -12,38 +13,7 @@ export class ProductGridComponent implements OnInit {
   constructor(private route:ActivatedRoute,private router:Router) { }
 
   ngOnInit() {
-    this.products=[
-      {
-        logo:'../../../assets/images/product-grid/stickbar-logo.png',
-        image:'../../../assets/images/product-grid/stickbar.png',
-        subProducts:[
-          'کاکائو با روکش شکلات شیری و بادام',
-          'قهوه با روکش شکلات شیری و بادام',
-          'زعفرانی با روکش زعفران'
-        ],
-        brandColor:'#FEAE62'
-      },
-      {
-        logo:'../../../assets/images/product-grid/friuty-logo.png',
-        image:'../../../assets/images/product-grid/friuty.png',
-        subProducts:[
-          'آناناس',
-          'طالبی',
-          'توت‌فرنگی',
-          'انگور',
-          'هندوانه'
-        ],
-        brandColor:'#D53F56'
-      },{
-        logo:'../../../assets/images/product-grid/crispy-logo.png',
-        image:'../../../assets/images/product-grid/crispy.png',
-        subProducts:[
-          'کاکائویی با روکش کاکائو و برنجک',
-          'قهوه با روکش شکلات شیری و بادام'
-        ],
-        brandColor:'#909090'
-      }
-    ];
+    this.products=productGridList;
     this.breadCrumbLinks=[
       {
         title:'صفحه اصلی',
@@ -58,16 +28,18 @@ export class ProductGridComponent implements OnInit {
         link:''
       }
     ];
-    this.route.queryParams.subscribe(params => {
-     if(params['type']=='ice-cream'){
-       this.slide('right');
-       this.breadCrumbLinks[2].title='بستنی';
-     }else{
-       this.slide('left');
-       this.breadCrumbLinks[2].title='لبنیات';
-     }
-     this.activeSlide=params['type']=='ice-cream'?'right':'left';
-    });
+    setTimeout(()=>{
+      this.route.queryParams.subscribe(params => {
+        if(params['type']=='dairy'){
+          this.slide('left');
+          this.breadCrumbLinks[2].title='لبنیات';
+        }else{
+          this.slide('right');
+          this.breadCrumbLinks[2].title='بستنی';
+        }
+        this.activeSlide=params['type']=='ice-cream'?'right':'left';
+      });
+    },150);
 
 
   }
@@ -80,7 +52,7 @@ export class ProductGridComponent implements OnInit {
 
   slide(dir:string){
     this.activeSlide=dir;
-
+    console.log(dir);
     if(window.innerWidth>767){
       if(dir=='right'){
         this.rightSide.nativeElement.style.width=this.rightSide.nativeElement.children[0].children[0].scrollWidth+'px';

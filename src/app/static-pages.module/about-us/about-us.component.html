@@ -4,21 +4,32 @@
     <div class="navigator-wrapper">
       <div class="container flex-row jus-between al-center">
         <a [routerLink]="['/']"><i class="dfi dfi-close"></i></a>
-        <d-bread-crumb [links]="[{title:'صفحه اصلی',link:'/'},{title:'درباره ما',link:''}]" [white]="true"></d-bread-crumb>
+        <d-bread-crumb [links]="[{title:'صفحه اصلی',link:'/'},{title:'درباره ما',link:''}]"
+                       [white]="true"></d-bread-crumb>
       </div>
     </div>
     <div class="title">
       <h1>درباره ما</h1>
       <div class="line"></div>
     </div>
+    <svg id="small" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 375 22">
+      <defs>
+        <style>
+          .small-bc-prime {
+            fill: #1ed0ff;
+          }
+        </style>
+      </defs>
+      <path class="small-bc-prime" d="M0,22H375C328.67,9.42,264.68.05,188,0,110.85,0,46.49,9.38,0,22Z"/>
+    </svg>
   </section>
   <section id="about-text">
-    <svg preserveAspectRatio="xMinYMin slice" xmlns="http://www.w3.org/2000/svg"
+    <svg id="big" preserveAspectRatio="xMinYMin slice" xmlns="http://www.w3.org/2000/svg"
          xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1300 1081.37">
       <defs>
         <pattern id="img1" patternUnits="objectBoundingBox" width="100%" height="100%">
           <image preserveAspectRatio="xMinYMin slice" xlink:href="../../../assets/images/static-pages/about-bg-2.jpg"
-                 x="0" y="0" width="100%" height="100%"/>
+                 x="0" y="0" width="100%" height="100%"></image>
         </pattern>
         <style>
           .elp2 {
@@ -40,9 +51,8 @@
             d="M0,1081.37H1300v-557C790,513.35,568.58-23.9,127.92.83,79.47,6.45,36.66,19.38,0,39.37Z"/>
     </svg>
     <div class="container flex-row jus-center">
-      <div class="section-inside-wrapper">
-        <h2>شرکت لبنیات و</h2>
-        <h2 style="margin-bottom: 90px;">بستنی دومینو</h2>
+      <div class="siw">
+        <h2>شرکت لبنیات و<br>بستنی دومینو</h2>
         <p>شرکت لبنیات و بستنی دومینو در سال 1390 با پشتوانه غنی از تجربه و تخصص که حاصل بیش از سی سال تلاش مداوم و
           کارآفرینی بنیانگذاران خود که تا قبل از تاسیس دومینو به عنوان یکی از بنیانگذاران و مالکان مجموعه لبنیات و بستنی
           میهن فعالیت می کردند، تاسیس گردید. این شرکت با بهره گیری از آخرین فناوری های پیشرفته و مدرن ترین تجهیزات
@@ -60,7 +70,7 @@
 
   <section id="about2-text">
     <div class="container flex-row jus-center">
-      <div class="section-inside-wrapper">
+      <div class="siw">
         <p>این شرکت با سرمایه گذاری گستره اقدام به پیاده سازی یکی مدرن ترین آزمایشگاه های شیر ، بزرگترین واحد تحقیق و
           توسعه صنعت لبنیات و بستنی در ایران ، کارگاه تولید فالوده ، خط تولید نان بستنی و واحد تولید شکلات در درون
           مجموعه دومینو نموده است و در کنار اینها از مجهزترین و بزرگترین مجموعه سردخانه های تخصصی بستنی بهره می
@@ -70,14 +80,14 @@
           استفاده از این تکنولوژی تا سالهای برای شرکت دومینو محفوظ باقی خواهد ماند.</p>
         <div class="outer-circle">
           <div class="inner-circle">
-            <img src="../../../assets/images/static-pages/about-us-3.jpg">
+            <img *ngFor="let img of circleImages;let i=index" [src]="img" [class.active]="selectedCircleImage==i">
           </div>
         </div>
         <div class="number-browser-wrapper">
           <ul class="number-browser">
-            <li #numbers (mouseover)="moveGoo($event)">۰۱</li>
-            <li #numbers (mouseover)="moveGoo($event)">۰۲</li>
-            <li #numbers (mouseover)="moveGoo($event)">۰۳</li>
+            <li #numbers (mouseover)="moveGoo($event,0,false)" (click)="moveGoo($event,0)">۰۱</li>
+            <li #numbers (mouseover)="moveGoo($event,1,false)" (click)="moveGoo($event,1)">۰۲</li>
+            <li #numbers (mouseover)="moveGoo($event,2,false)" (click)="moveGoo($event,2)">۰۳</li>
             <li #selectedNum class="selected-num"></li>
           </ul>
         </div>
@@ -88,35 +98,45 @@
     <div class="container">
       <div class="about-features-wrapper">
         <div class="circles-wrapper">
-          <div class="circle">
-            <div class="icon">
-              <i class="dfi dfi-feature-number"></i>
+          <div #circles class="circle">
+            <div class="circle-inside">
+              <div class="icon">
+                <i class="dfi dfi-feature-number"></i>
+              </div>
+              <span>اهداف</span>
             </div>
-            <span>اهداف</span>
           </div>
-          <div class="circle">
-            <div class="icon">
-              <i class="dfi dfi-feature-distribution"></i>
+          <div #circles class="circle">
+            <div class="circle-inside">
+              <div class="icon">
+                <i class="dfi dfi-feature-distribution"></i>
+              </div>
+              <span>شبکه توضیع و فروش</span>
             </div>
-            <span>شبکه توضیع و فروش</span>
           </div>
-          <div class="circle">
-            <div class="icon">
-              <i class="dfi dfi-feature-foundation"></i>
+          <div #circles class="circle">
+            <div class="circle-inside">
+              <div class="icon">
+                <i class="dfi dfi-feature-foundation"></i>
+              </div>
+              <span>تاسیس</span>
             </div>
-            <span>تاسیس</span>
           </div>
-          <div class="circle">
-            <div class="icon">
-              <i class="dfi dfi-feature-products"></i>
+          <div #circles class="circle">
+            <div class="circle-inside">
+              <div class="icon">
+                <i class="dfi dfi-feature-products"></i>
+              </div>
+              <span>تعداد محصولات</span>
             </div>
-            <span>تعداد محصولات</span>
           </div>
-          <div class="circle">
-            <div class="icon">
-              <i class="dfi dfi-feature-perspective"></i>
+          <div #circles class="circle">
+            <div class="circle-inside">
+              <div class="icon">
+                <i class="dfi dfi-feature-perspective"></i>
+              </div>
+              <span>چشم انداز‌ها</span>
             </div>
-            <span>چشم انداز‌ها</span>
           </div>
         </div>
         <div class="feature-texts">
@@ -132,7 +152,7 @@
               <h4 class="title">چشم انداز‌ها</h4>
               <div class="desc">
                 <div class="circle"></div>
-                <p>تبدیل به یکی از سه  شرکت برتر صنعت لبنیات و بستنی در خاورمیانه و شاخ آفریقا</p>
+                <p>تبدیل به یکی از سه شرکت برتر صنعت لبنیات و بستنی در خاورمیانه و شاخ آفریقا</p>
               </div>
             </div>
             <div class="feature-group">
@@ -163,7 +183,7 @@
               <h4 class="title">شبکه توضیع و فروش</h4>
               <div class="desc">
                 <div class="circle"></div>
-                <p>تاسیس 10 شعبه نمایندگی با مالکیت 100 درصد دومینو در  نقاط مختلف کشور</p>
+                <p>تاسیس 10 شعبه نمایندگی با مالکیت 100 درصد دومینو در نقاط مختلف کشور</p>
               </div>
               <div class="desc">
                 <div class="circle"></div>
@@ -192,7 +212,8 @@
       <filter id="shadowed-goo">
 
         <feGaussianBlur in="SourceGraphic" result="blur" stdDeviation="10"></feGaussianBlur>
-        <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -7" result="goo"></feColorMatrix>
+        <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -7"
+                       result="goo"></feColorMatrix>
         <feGaussianBlur in="goo" stdDeviation="3" result="shadow"></feGaussianBlur>
         <feColorMatrix in="shadow" mode="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 1 -0.2"
                        result="shadow"></feColorMatrix>
@@ -202,7 +223,8 @@
       </filter>
       <filter id="goo">
         <feGaussianBlur in="SourceGraphic" result="blur" stdDeviation="10"></feGaussianBlur>
-        <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -7" result="goo"></feColorMatrix>
+        <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -7"
+                       result="goo"></feColorMatrix>
         <feComposite in2="goo" in="SourceGraphic" result="mix"></feComposite>
       </filter>
     </defs>

@@ -1,6 +1,7 @@
 import {AfterViewInit, Component, OnInit, ViewChild} from '@angular/core';
 import {ActivatedRoute, Router} from '@angular/router';
 import {Link} from '../../_models/interfaces';
+import {blogGridArticles} from '../../_data/mock-data';
 
 @Component({
   selector: 'd-blog-grid',
@@ -22,38 +23,7 @@ export class BlogGridComponent implements OnInit, AfterViewInit {
   }
 
   ngOnInit() {
-    this.articles = [
-      {
-        thumbnail: '../../../assets/images/recom-blog/a1.png',
-        title: 'کیک با شیر وانیلی',
-        alias: 'cake-with-vanila-milk',
-      },
-      {
-        thumbnail: '../../../assets/images/recom-blog/a2.png',
-        title: 'کیک با شیر قهوه',
-        alias: 'cake-with-coffe-milk',
-      },
-      {
-        thumbnail: '../../../assets/images/recom-blog/a3.png',
-        title: 'کیک با شیر سفید',
-        alias: 'cake-with-regular-milk',
-      },
-      {
-        thumbnail: '../../../assets/images/recom-blog/a1.png',
-        title: 'کیک با شیر وانیلی',
-        alias: 'cake-with-vanila-milk',
-      },
-      {
-        thumbnail: '../../../assets/images/recom-blog/a2.png',
-        title: 'کیک با شیر قهوه',
-        alias: 'cake-with-coffe-milk',
-      },
-      {
-        thumbnail: '../../../assets/images/recom-blog/a3.png',
-        title: 'کیک با شیر سفید',
-        alias: 'cake-with-regular-milk',
-      }
-    ];
+    this.articles = blogGridArticles;
 
     this.route.queryParams.subscribe(() => {
       // this.activeHeader = params['category'];
@@ -116,6 +86,7 @@ export class BlogGridComponent implements OnInit, AfterViewInit {
     this.router.navigate(['/blog'], {queryParams: {category: category}}).then();
     this.parent.nativeElement.style.transform = 'rotate(' + ((this.categoryPosition - 2) * 60) + 'deg)';
     this.activeCategory();
+
 
   }
 

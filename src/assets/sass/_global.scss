@@ -123,6 +123,16 @@ h3 {
 
 @include wiggle(wiggle,vertical,10px);
 
+section#header{
+  .line{
+    &.active{
+      transform: translateY(-10px) !important;
+      animation: wiggle 4s ease-in-out !important;
+      animation-iteration-count: 3 !important;
+    }
+  }
+}
+
 .domino-section-element {
   display: flex;
   flex-direction: column;
@@ -132,7 +142,7 @@ h3 {
   &.active{
     transform: translateY(-10px);
     animation: wiggle 4s ease-in-out;
-    animation-iteration-count: 2;
+    animation-iteration-count: 3;
   }
   &.short {
     .line {

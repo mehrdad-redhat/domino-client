@@ -7,11 +7,13 @@ import {AfterViewInit, Component, HostListener} from '@angular/core';
 })
 export class AppComponent implements AfterViewInit{
   sectionElements:NodeListOf<Element>;
+  lineEl:NodeListOf<Element>;
   loaded:boolean=false;
 
   ngAfterViewInit(){
     setTimeout(()=>{
       this.sectionElements=document.querySelectorAll('div.domino-section-element');
+      this.lineEl=document.querySelectorAll('div.line');
       this.loaded=true;
     },500)
   }
@@ -20,6 +22,13 @@ export class AppComponent implements AfterViewInit{
   onWindowScroll() {
     if(this.loaded){
       this.sectionElements.forEach((el)=>{
+        if(AppComponent.isInViewPort(el)){
+          el.classList.add('active');
+        }else{
+          el.classList.remove('active');
+        }
+      })
+      this.lineEl.forEach((el)=>{
         if(AppComponent.isInViewPort(el)){
           el.classList.add('active');
         }else{

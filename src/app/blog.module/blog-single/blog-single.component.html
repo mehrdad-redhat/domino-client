@@ -84,7 +84,7 @@
     <h2 *ngIf="articleData.category=='cooking'" class="gray">آشپزی‌های مرتبط</h2>
     <h2 *ngIf="articleData.category=='news'" class="gray">خبرهای مرتبط</h2>
     <h2 *ngIf="articleData.category=='campaign'" class="gray">کمپین‌های مرتبط</h2>
-    <div class="articles section-inside-wrapper big">
+    <div class="articles container">
       <ul>
         <li *ngFor="let p of articleData?.recommended_articles">
           <a class="container" [routerLink]="['/blog',p.alias]">

@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {Link} from '../../_models/interfaces';
+import {productSingleArticles} from '../../_data/mock-data';
 
 @Component({
   selector: 'd-product-single',
@@ -12,23 +13,7 @@ export class ProductSingleComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.articles=[
-      {
-        thumbnail: '../../../assets/images/recom-blog/a1.png',
-        title: 'کیک با شیر وانیلی',
-        alias: 'cake-with-vanila-milk',
-      },
-      {
-        thumbnail: '../../../assets/images/recom-blog/a2.png',
-        title: 'کیک با شیر قهوه',
-        alias: 'cake-with-coffe-milk',
-      },
-      {
-        thumbnail: '../../../assets/images/recom-blog/a3.png',
-        title: 'کیک با شیر سفید',
-        alias: 'cake-with-regular-milk',
-      }
-    ];
+    this.articles=productSingleArticles;
     this.breadCrumbLinks=[
       {
         title:'صفحه اصلی',

@@ -1,5 +1,5 @@
-<header #header class="flex-row al-center">
-  <div class="container hi-100">
+<header #header class="flex-col jus-center al-center">
+  <div class="container">
     <main class="flex-row jus-between al-center">
       <div id="right" class="flex-row al-center">
         <span id="menu" class="flex-row al-center">
@@ -12,18 +12,16 @@
       </div>
       <div id="middle" class="flex-row al-center jus-center hi-100">
         <ul class="flex-row al-center jus-center hi-100">
-          <li [class.active]="activeMenu=='ice-cream'" (click)="browse('ice-cream')">
+          <li [class.active]="activeMenu=='0'" (click)="browse(0)">
             <i class="dfi dfi-arrow-down"></i>
             <span>بستنی</span>
             <span class="moving-bar" id="ice"></span>
           </li>
-          <li [class.active]="activeMenu=='dairy'" (click)="browse('dairy')">
+          <li [class.active]="activeMenu=='1'" (click)="browse(1)">
             <span>لبنیات</span>
             <span class="moving-bar" id="dairy"></span>
           </li>
         </ul>
-
-
       </div>
       <div id="left" class="flex-row al-center">
         <a [routerLink]="['/']" class="flex-row al-center">
@@ -32,7 +30,31 @@
       </div>
     </main>
   </div>
+  <section class="submenu" [class.active]="activeMenu!=-1">
+    <ul class="sub-category">
+      <li *ngFor="let sc of productList[activeMenu]?.children;let i=index" [class.active]="activeSubcat==i" (click)="browsCats(i)">{{sc.fa_name}}</li>
+    </ul>
+    <div #rail class="images-rail container">
+      <span style="width: 100%;text-align: center;font-size: 1.2em" *ngIf="productList[activeMenu]?.children.length==0">محصولی برای لبنیات موجود نیست</span>
+      <div #imagesHolder class="images">
+        <ul #cats *ngFor="let pg of productList[activeMenu]?.children;let i=index" [class.active]="activeSubcat==i" class="pr-groups">
+          <li *ngFor="let pr of pg?.children;let i=index">
+            <a [routerLink]="['products',pr.name]">
+              <img [src]="pr.img">
+              <span>{{pr.fa_name}}</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="controll">
+      <span (click)="move('right')"><i class="dfi dfi-arrow-right"></i></span>
+      <span (click)="move('left')"><i class="dfi dfi-arrow-left"></i></span>
+    </div>
+  </section>
 </header>
+
+
 
 
 
@@ -46,7 +68,7 @@
   <div  class="overlay-menu">
     <div class="menu-wrapper">
       <section class="top wi-100 flex-row jus-between">
-        <a [routerLink]="['/']"><i class="dfi dfi-close"></i></a>
+        <i class="dfi dfi-close" (click)="navMenuActive=false"></i>
         <a [routerLink]="['/']" class="flex-row al-center">
           <img src="../../assets/images/logo.png" alt="logo">
         </a>

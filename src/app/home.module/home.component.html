@@ -227,7 +227,7 @@
       </div>
       <h2>کتاب دومینو</h2>
       <div class="article-wrapper section-inside-wrapper">
-        <div #articles class="domino-book-wrapper card" *ngFor="let a of dominoBookArticles">
+        <div #articles class="domino-book-wrapper card" *ngFor="let a of dominoBookArticles;let i=index" [class.active]="activeArticle==i">
           <div class="detail">
             <h3 class="category">{{a.category}}</h3>
             <h3 class="title">{{a.title}}</h3>
@@ -247,9 +247,9 @@
       </div>
       <div class="number-browser-wrapper section-inside-wrapper">
         <ul class="number-browser">
-          <li #numbers (mouseenter)="moveGoo($event,1,false)" (click)="moveGoo($event,1)">۰۱</li>
-          <li #numbers (mouseenter)="moveGoo($event,2,false)" (click)="moveGoo($event,2)">۰۲</li>
-          <li #numbers (mouseenter)="moveGoo($event,3,false)" (click)="moveGoo($event,3)">۰۳</li>
+          <li #numbers (mouseenter)="moveGoo($event,0,false)" (click)="moveGoo($event,0)">۰۱</li>
+          <li #numbers (mouseenter)="moveGoo($event,1,false)" (click)="moveGoo($event,1)">۰۲</li>
+          <li #numbers (mouseenter)="moveGoo($event,2,false)" (click)="moveGoo($event,2)">۰۳</li>
           <li #selectedNum class="selected-num"></li>
         </ul>
       </div>
@@ -272,7 +272,7 @@
       <span class="circle"></span>
     </div>
     <h2 class="gray">اینستاگرام دومینو</h2>
-    <div class="insta-feed section-inside-wrapper big">
+    <div class="insta-feed section-inside-wrapper">
       <d-insta-feed></d-insta-feed>
     </div>
   </section>
