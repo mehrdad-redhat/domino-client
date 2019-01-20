@@ -1,4 +1,20 @@
+[![Domino Logo](http://eteebar.com/upload/images/company/472/0logo.jpg)](http://www.dominodairy.com/fa/home)
+
 # DominoClient
+
+  Client side of web site for Domino dairy [Domino dairy](http://www.dominodairy.com/fa/home) website.
+
+## Installation
+
+Before installing, [download and install Node.js](https://nodejs.org/en/download/).
+Node.js 8 or higher is required.
+
+Installation is done using the
+[`npm install` command](https://docs.npmjs.com/getting-started/installing-npm-packages-locally):
+
+```bash
+$ npm install
+```
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.0.6.
 
